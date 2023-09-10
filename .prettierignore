@@ -1,0 +1,8 @@
+/public
+
+# 설정
+.eslintrc.json
+next.config.js
+tsconfig.json
+.prettierrc.json
+shell.nix
