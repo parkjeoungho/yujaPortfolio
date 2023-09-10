@@ -1,4 +1,4 @@
-import { makeObservable } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 export enum Feature {
   naver = "NAVER",
@@ -12,7 +12,7 @@ export class ContentModel {
 
   constructor(props: { contentSet: FeatureModel[] }) {
     this.contentSet = props.contentSet;
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 }
 
@@ -32,7 +32,7 @@ export class FeatureModel {
     this.featureName = props.featureName;
     this.featureIcon = props.featureIcon;
     this.items = props.items;
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 }
 
@@ -58,7 +58,7 @@ export class FeatureSectionModel {
     this.contribution = props.contribution;
     this.featureItems = props.featureItems;
     this.currentItem = props.currentItem ?? null;
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 }
 
@@ -69,6 +69,6 @@ export class FeatureItemModel {
   constructor(props: { featureImage: string; featureDetailImages?: string[] }) {
     this.featureImage = props.featureImage;
     this.featureDetailImages = props.featureDetailImages ?? [];
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 }

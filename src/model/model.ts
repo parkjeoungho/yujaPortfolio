@@ -1,8 +1,8 @@
-import { makeObservable } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 class FrontModel {
   constructor() {
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 }
 
