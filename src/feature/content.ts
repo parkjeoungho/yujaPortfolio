@@ -18,7 +18,7 @@ export const featureNaver: FeatureModel = new FeatureModel({
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
         new FeatureItemModel({
-          featureImage: "/assets/images/main/choose_1200x490.png",
+          featureImage: "/assets/images/main/juicy_1200x490.png",
         }),
         new FeatureItemModel({
           featureImage: "/assets/images/main/coolness_1200x490.png",
@@ -27,10 +27,10 @@ export const featureNaver: FeatureModel = new FeatureModel({
           featureImage: "/assets/images/main/diet_1200x490.png",
         }),
         new FeatureItemModel({
-          featureImage: "/assets/images/main/dumpling_1200x490.png",
+          featureImage: "/assets/images/main/summer_1200x490.png",
         }),
         new FeatureItemModel({
-          featureImage: "/assets/images/main/juicy_1200x490.png",
+          featureImage: "/assets/images/main/choose_1200x490.png",
         }),
         new FeatureItemModel({
           featureImage: "/assets/images/main/kimchi_1200x490.png",
@@ -39,7 +39,7 @@ export const featureNaver: FeatureModel = new FeatureModel({
           featureImage: "/assets/images/main/notice_1200x490.jpg",
         }),
         new FeatureItemModel({
-          featureImage: "/assets/images/main/summer_1200x490.png",
+          featureImage: "/assets/images/main/dumpling_1200x490.png",
         }),
       ],
     }),

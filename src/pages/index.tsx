@@ -52,7 +52,7 @@ const MainPage = observer(() => {
       </div>
 
       {/*main*/}
-      <div ref={featureMenus[featureNaver.featureType].ref} className="section-main">
+      <div ref={featureMenus[featureNaver.featureType].ref} className="section section-main">
         <div className="inner-container">
           <MainSliderView model={featureNaver.items[0]} />
         </div>
