@@ -89,6 +89,30 @@ const MainPage = observer(() => {
                     </SectionView>
                   );
                 }
+
+                if (content.featureType === Feature.shoppingLive) {
+                  return (
+                    <SectionView
+                      key={`shoppingLive-${index}`}
+                      title={item.sectionTitle}
+                      contribution={item.contribution}
+                    >
+                      <DefaultCardView model={item} />
+                    </SectionView>
+                  );
+                }
+
+                if (content.featureType === Feature.etc) {
+                  return (
+                    <SectionView
+                      key={`shoppingLive-${index}`}
+                      title={item.sectionTitle}
+                      contribution={item.contribution}
+                    >
+                      <DefaultCardView model={item} />
+                    </SectionView>
+                  );
+                }
               })}
             </div>
           </div>

@@ -324,14 +324,14 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       isHasDetail: false,
       viewCount: 5,
       size: 327,
-      sectionTitle: "당장 깨물어 보고 싶은 귀여운 과일 프로젝트",
+      sectionTitle: "당장 깨물어 먹고 싶은 귀여운 과일 프로젝트",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
         new FeatureItemModel({
-          featureImage: "/assets/images/section_08/h/cherry.png",
+          featureImage: "/assets/images/section_08/h/dif.png",
         }),
         new FeatureItemModel({
-          featureImage: "/assets/images/section_08/h/dif.png",
+          featureImage: "/assets/images/section_08/h/cherry.png",
         }),
         new FeatureItemModel({
           featureImage: "/assets/images/section_08/h/peach.png",
