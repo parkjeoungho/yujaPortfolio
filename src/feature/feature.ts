@@ -41,8 +41,12 @@ export class FeatureSectionModel {
   isHasDetail: boolean;
   sectionTitle: string;
   contribution: string;
+  isTwoLine?: boolean | null;
+  viewCount: number;
+  size: number;
   featureItems: FeatureItemModel[];
   currentItem?: number | null;
+  currentDetailImages: string[] = [];
 
   constructor(props: {
     isSlide: boolean;
@@ -50,6 +54,9 @@ export class FeatureSectionModel {
     sectionTitle: string;
     contribution: string;
     featureItems: FeatureItemModel[];
+    isTwoLine?: boolean;
+    viewCount: number;
+    size: number;
     currentItem?: number | null;
   }) {
     this.isSlide = props.isSlide;
@@ -57,8 +64,15 @@ export class FeatureSectionModel {
     this.sectionTitle = props.sectionTitle;
     this.contribution = props.contribution;
     this.featureItems = props.featureItems;
+    this.isTwoLine = props.isTwoLine ?? null;
+    this.viewCount = props.viewCount;
+    this.size = props.size;
     this.currentItem = props.currentItem ?? null;
     makeAutoObservable(this);
+  }
+
+  get percent() {
+    return 100 / this.viewCount;
   }
 }
 

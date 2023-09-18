@@ -16,6 +16,8 @@ export const featureNaver: FeatureModel = new FeatureModel({
       isHasDetail: false,
       sectionTitle: "네이버스토어 농협식품 배너 PC",
       contribution: "디자인 제작 기여도 100%",
+      viewCount: 1,
+      size: 383,
       featureItems: [
         new FeatureItemModel({
           featureImage: "/assets/images/main/juicy_1200x490.png",
@@ -46,20 +48,23 @@ export const featureNaver: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: false,
       isHasDetail: false,
+      isTwoLine: true,
+      viewCount: 5,
+      size: 260,
       sectionTitle: "네이버스토어 농협식품 배너 모바일",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
         new FeatureItemModel({
+          featureImage: "/assets/images/section_02/dumpling.png",
+        }),
+        new FeatureItemModel({
           featureImage: "/assets/images/section_02/choose.png",
         }),
         new FeatureItemModel({
+          featureImage: "/assets/images/section_02/notice.png",
+        }),
+        new FeatureItemModel({
           featureImage: "/assets/images/section_02/deliciousdiet.png",
-        }),
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_02/diet.png",
-        }),
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_02/dumpling.png",
         }),
         new FeatureItemModel({
           featureImage: "/assets/images/section_02/HomeCance.png",
@@ -68,10 +73,10 @@ export const featureNaver: FeatureModel = new FeatureModel({
           featureImage: "/assets/images/section_02/juicy.png",
         }),
         new FeatureItemModel({
-          featureImage: "/assets/images/section_02/NonghyupJuice.png",
+          featureImage: "/assets/images/section_02/diet.png",
         }),
         new FeatureItemModel({
-          featureImage: "/assets/images/section_02/notice.png",
+          featureImage: "/assets/images/section_02/NonghyupJuice.png",
         }),
         new FeatureItemModel({
           featureImage: "/assets/images/section_02/Holidays.jpg",
@@ -92,6 +97,8 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: true,
+      viewCount: 5,
+      size: 327,
       sectionTitle: "보건복지부 육아 인스타그램 카드뉴스",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -171,43 +178,8 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: true,
-      sectionTitle: "일룸 PET의 펫 관점형 리뷰 프로젝트",
-      contribution: "디자인 제작 기여도 100%",
-      featureItems: [
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_04/h/appointment_01.png",
-          featureDetailImages: ["/assets/images/section_04/h/appointment_02.png"],
-        }),
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_04/h/honey_01.png",
-          featureDetailImages: [
-            "/assets/images/section_04/h/honey_02.png",
-            "/assets/images/section_04/h/honey_03.png",
-          ],
-        }),
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_04/h/keyword_01.png",
-          featureDetailImages: ["/assets/images/section_04/h/keyword_02.png"],
-        }),
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_04/h/secret_01.png",
-          featureDetailImages: ["/assets/images/section_04/h/secret_02.png"],
-        }),
-        new FeatureItemModel({
-          featureImage: "/assets/images/section_04/h/test_01.png",
-          featureDetailImages: [
-            "/assets/images/section_04/h/test_02.png",
-            "/assets/images/section_04/h/test_03.png",
-            "/assets/images/section_04/h/test_04.png",
-            "/assets/images/section_04/h/test_05.png",
-            "/assets/images/section_04/h/test_06.png",
-          ],
-        }),
-      ],
-    }),
-    new FeatureSectionModel({
-      isSlide: true,
-      isHasDetail: true,
+      viewCount: 5,
+      size: 327,
       sectionTitle: "다양한 광고 디자인",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -245,7 +217,48 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     }),
     new FeatureSectionModel({
       isSlide: true,
+      isHasDetail: true,
+      viewCount: 5,
+      size: 327,
+      sectionTitle: "일룸 PET의 펫 관점형 리뷰 프로젝트",
+      contribution: "디자인 제작 기여도 100%",
+      featureItems: [
+        new FeatureItemModel({
+          featureImage: "/assets/images/section_04/h/appointment_01.png",
+          featureDetailImages: ["/assets/images/section_04/h/appointment_02.png"],
+        }),
+        new FeatureItemModel({
+          featureImage: "/assets/images/section_04/h/honey_01.png",
+          featureDetailImages: [
+            "/assets/images/section_04/h/honey_02.png",
+            "/assets/images/section_04/h/honey_03.png",
+          ],
+        }),
+        new FeatureItemModel({
+          featureImage: "/assets/images/section_04/h/keyword_01.png",
+          featureDetailImages: ["/assets/images/section_04/h/keyword_02.png"],
+        }),
+        new FeatureItemModel({
+          featureImage: "/assets/images/section_04/h/secret_01.png",
+          featureDetailImages: ["/assets/images/section_04/h/secret_02.png"],
+        }),
+        new FeatureItemModel({
+          featureImage: "/assets/images/section_04/h/test_01.png",
+          featureDetailImages: [
+            "/assets/images/section_04/h/test_02.png",
+            "/assets/images/section_04/h/test_03.png",
+            "/assets/images/section_04/h/test_04.png",
+            "/assets/images/section_04/h/test_05.png",
+            "/assets/images/section_04/h/test_06.png",
+          ],
+        }),
+      ],
+    }),
+    new FeatureSectionModel({
+      isSlide: true,
       isHasDetail: false,
+      viewCount: 5,
+      size: 327,
       sectionTitle: "친환경 브랜드의 청량함이 느껴지는 콘텐츠",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -281,6 +294,8 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: false,
+      viewCount: 5,
+      size: 327,
       sectionTitle: "건강기능식품 광고 이미지",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -307,6 +322,8 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: false,
+      viewCount: 5,
+      size: 327,
       sectionTitle: "당장 깨물어 보고 싶은 귀여운 과일 프로젝트",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -338,6 +355,8 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: false,
       isHasDetail: true,
+      viewCount: 5,
+      size: 555,
       sectionTitle: "국민 면요리 면사랑 쇼핑라이브 송출배너",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -393,6 +412,8 @@ export const featureEtc: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: false,
+      viewCount: 5,
+      size: 610,
       sectionTitle: "다양한 광고 포스터",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -419,6 +440,8 @@ export const featureEtc: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: false,
+      viewCount: 5,
+      size: 610,
       sectionTitle: "글로벌 수입수철 뉴스를 포스터로",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
@@ -445,6 +468,8 @@ export const featureEtc: FeatureModel = new FeatureModel({
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: false,
+      viewCount: 5,
+      size: 610,
       sectionTitle: "여름특집 광고 포스터",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [

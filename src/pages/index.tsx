@@ -4,8 +4,10 @@ import { useModel } from "../../ex/mobx";
 import { Feature } from "../feature/feature";
 import { RefObject } from "react";
 import { useMoveSection } from "../hooks/hooks";
-import { contentSets, featureNaver } from "../feature/content";
+import { contentSets } from "../feature/content";
 import MainSliderView from "../view/mainSliderView";
+import DefaultCardView from "../view/defaultCardView";
+import SectionView from "../view/sectionView";
 
 const MainPage = observer(() => {
   const model = useModel(MainModel);
@@ -51,11 +53,63 @@ const MainPage = observer(() => {
         </div>
       </div>
 
-      {/*main*/}
-      <div ref={featureMenus[featureNaver.featureType].ref} className="section section-main">
-        <div className="inner-container">
-          <MainSliderView model={featureNaver.items[0]} />
-        </div>
+      <div className="section-wrap">
+        {contentSets.contentSet.map((content, index) => (
+          <div
+            key={`content-${index}`}
+            ref={featureMenus[content.featureType].ref}
+            className="section"
+          >
+            <div className="inner-container">
+              {content.items.map((item, index) => {
+                if (content.featureType === Feature.naver) {
+                  return (
+                    <SectionView
+                      key={`naver-${index}`}
+                      title={item.sectionTitle}
+                      contribution={item.contribution}
+                    >
+                      {/*main*/}
+                      {index === 0 && <MainSliderView model={item} />}
+
+                      {/*naver - mobile*/}
+                      {index !== 0 && <DefaultCardView model={item} />}
+                    </SectionView>
+                  );
+                }
+
+                if (content.featureType === Feature.instagram) {
+                  return (
+                    <SectionView
+                      key={`instagram-${index}`}
+                      title={item.sectionTitle}
+                      contribution={item.contribution}
+                    >
+                      <DefaultCardView model={item} />
+                    </SectionView>
+                  );
+                }
+              })}
+            </div>
+          </div>
+        ))}
+        {/*<div ref={featureMenus[featureNaver.featureType].ref} className="section section-main">*/}
+        {/*  <div className="inner-container">*/}
+        {/*    {featureNaver.items.map((item, index) => (*/}
+        {/*      <SectionView*/}
+        {/*        key={`naver-${index}`}*/}
+        {/*        title={item.sectionTitle}*/}
+        {/*        contribution={item.contribution}*/}
+        {/*      >*/}
+        {/*        /!*main*!/*/}
+        {/*        {index === 0 && <MainSliderView model={item} />}*/}
+
+        {/*        /!*naver - mobile*!/*/}
+        {/*        {index !== 0 && <DefaultCardView model={item} />}*/}
+        {/*      </SectionView>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </div>
     </>
   );

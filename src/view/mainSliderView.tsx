@@ -1,10 +1,12 @@
 import { observer } from "mobx-react-lite";
 import Slider from "react-slick";
 import { FeatureSectionModel } from "../feature/feature";
-import { isNil } from "lodash";
 import { useRef, useState } from "react";
+import Play from "../../public/assets/images/main/play.svg";
+import Pause from "../../public/assets/images/main/pause.svg";
+import classNames from "classnames";
 
-const MainSliderView = observer((props: { model: FeatureSectionModel | undefined }) => {
+const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
   const ref = useRef<Slider>(null);
   const [isPlay, setIsPlay] = useState<boolean>(true);
 
@@ -15,10 +17,12 @@ const MainSliderView = observer((props: { model: FeatureSectionModel | undefined
 
     if (isPlay) {
       ref.current.slickPause();
+      setIsPlay(false);
       return;
     }
 
     ref.current.slickPlay();
+    setIsPlay(true);
   };
 
   const settings = {
@@ -35,32 +39,37 @@ const MainSliderView = observer((props: { model: FeatureSectionModel | undefined
     cssEase: "ease-in-out",
     nextArrow: <MainNextArrow addClassName="main-slide-arrow main-slide-next" />,
     prevArrow: <MainPrevArrow addClassName="main-slide-arrow main-slide-prev" />,
+    appendDots: (dots: any) => (
+      <div>
+        <button
+          type="button"
+          className={classNames("slide-controller", {
+            play: isPlay,
+          })}
+          onClick={() => onAutoPlayController(isPlay)}
+        >
+          <img src={Pause.src} alt="정지" />
+          <img src={Play.src} alt="재생" />
+        </button>
+        <ul> {dots} </ul>
+      </div>
+    ),
   };
 
-  if (isNil(props.model)) {
-    return <div></div>;
-  }
-
   return (
-    <div className="main-content">
-      <div className="section-head">
-        <h2>{props.model.sectionTitle}</h2>
-        <p>{props.model.contribution}</p>
-      </div>
-      <div className="main-slider-container">
-        <div className="slider-wrap">
-          <Slider ref={ref} {...settings}>
-            {props.model.featureItems.map((feature, index) => (
-              <div key={`main-slider-list-${index}`} className="slide-list">
-                <div className="slide-list-image">
-                  <img src={feature.featureImage} alt="main-item" />
-                </div>
+    <div className="main-slider-container">
+      <div className="slider-wrap">
+        <Slider ref={ref} {...settings}>
+          {props.model.featureItems.map((feature, index) => (
+            <div key={`main-slider-list-${index}`} className="slide-list">
+              <div className="slide-list-image">
+                <img src={feature.featureImage} alt="main-item" />
               </div>
-            ))}
-          </Slider>
-        </div>
-        <div className="gradient" />
+            </div>
+          ))}
+        </Slider>
       </div>
+      <div className="gradient" />
     </div>
   );
 });
