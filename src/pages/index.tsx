@@ -68,12 +68,22 @@ const MainPage = observer(() => {
                       key={`naver-${index}`}
                       title={item.sectionTitle}
                       contribution={item.contribution}
+                      hasDetail={item.isHasDetail}
                     >
                       {/*main*/}
                       {index === 0 && <MainSliderView model={item} />}
 
                       {/*naver - mobile*/}
-                      {index !== 0 && <DefaultCardView model={item} />}
+                      {index !== 0 && (
+                        <DefaultCardView
+                          model={item}
+                          onDetail={(id: string | null, detail: string | null) =>
+                            model.setCurrentDetailSection(id, detail)
+                          }
+                          currentDetailSection={model.currentDetailSection}
+                          currentDetailItem={model.currentDetailItem}
+                        />
+                      )}
                     </SectionView>
                   );
                 }
@@ -84,8 +94,16 @@ const MainPage = observer(() => {
                       key={`instagram-${index}`}
                       title={item.sectionTitle}
                       contribution={item.contribution}
+                      hasDetail={item.isHasDetail}
                     >
-                      <DefaultCardView model={item} />
+                      <DefaultCardView
+                        model={item}
+                        onDetail={(id: string | null, detail: string | null) =>
+                          model.setCurrentDetailSection(id, detail)
+                        }
+                        currentDetailSection={model.currentDetailSection}
+                        currentDetailItem={model.currentDetailItem}
+                      />
                     </SectionView>
                   );
                 }
@@ -96,8 +114,16 @@ const MainPage = observer(() => {
                       key={`shoppingLive-${index}`}
                       title={item.sectionTitle}
                       contribution={item.contribution}
+                      hasDetail={item.isHasDetail}
                     >
-                      <DefaultCardView model={item} />
+                      <DefaultCardView
+                        model={item}
+                        onDetail={(id: string | null, detail: string | null) =>
+                          model.setCurrentDetailSection(id, detail)
+                        }
+                        currentDetailSection={model.currentDetailSection}
+                        currentDetailItem={model.currentDetailItem}
+                      />
                     </SectionView>
                   );
                 }
@@ -108,8 +134,16 @@ const MainPage = observer(() => {
                       key={`shoppingLive-${index}`}
                       title={item.sectionTitle}
                       contribution={item.contribution}
+                      hasDetail={item.isHasDetail}
                     >
-                      <DefaultCardView model={item} />
+                      <DefaultCardView
+                        model={item}
+                        onDetail={(id: string | null, detail: string | null) =>
+                          model.setCurrentDetailSection(id, detail)
+                        }
+                        currentDetailSection={model.currentDetailSection}
+                        currentDetailItem={model.currentDetailItem}
+                      />
                     </SectionView>
                   );
                 }
@@ -140,10 +174,22 @@ const MainPage = observer(() => {
 });
 
 class MainModel {
-  select = false;
+  currentDetailSection: string | null = null;
+  currentDetailItem: string | null = null;
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  setCurrentDetailSection(detail: string | null, id: string | null) {
+    if (this.currentDetailSection === id && this.currentDetailItem === detail) {
+      this.currentDetailSection = null;
+      this.currentDetailItem = null;
+      return;
+    }
+
+    this.currentDetailSection = id;
+    this.currentDetailItem = detail;
   }
 }
 
