@@ -124,7 +124,9 @@ const DefaultCardView = observer(
             <>
               {props.model.currentDetailList(props.currentDetailItem).map((item, index) => (
                 <div key={`feature-${props.currentDetailSection}-${index}`}>
-                  <img src={item} alt="detail-item" />
+                  <div>
+                    <img src={item} alt="detail-item" />
+                  </div>
                 </div>
               ))}
               {!isNil(props.currentDetailSection) &&
