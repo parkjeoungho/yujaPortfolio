@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans+Narrow:wght@700&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -95,7 +95,7 @@ body,
 }
 
 .container .main .inner-content {
-    height: 87vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -634,16 +634,26 @@ body,
     position: fixed;
     top: 0;
     left: 0;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 1);
     z-index: 20;
     pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    scale: 0.7;
+    animation: mouse 2s infinite linear;
+
+}
+
+@keyframes mouse {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+
 }
 
 .mouse p {
@@ -655,3 +665,142 @@ body,
 body {
     cursor: none;
 }
+
+.intro-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.intro-container .loading-text-box {
+    position: relative;
+}
+
+.intro-container .loading-text-box .bg-box,
+.intro-container .loading-text-box .top-box {
+    display: flex;
+    align-items: flex-end;
+    opacity: 0.3;
+    transition: 1.2s all cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.intro-container.on .loading-text-box .bg-box,
+.intro-container.on .loading-text-box .top-box {
+    opacity: 1;
+}
+
+.intro-container .loading-text-box .top-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 1.2s all cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+/*.intro-container.on*/
+.intro-container.on .loading-text-box .top-box {
+    width: 101%;
+}
+
+.intro-container .loading-text-box .bg-box span,
+.intro-container .loading-text-box .top-box span {
+    position: relative;
+    display: block;
+    -webkit-text-stroke-width: 1px;
+    font-size: 20.11vw;
+    line-height: 16.93vw;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    box-sizing: border-box;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.intro-container .loading-text-box .bg-box span {
+    color: transparent;
+    -webkit-text-stroke-color: #ffffff;
+}
+
+.intro-container .loading-text-box .top-box span {
+    color: blue;
+    -webkit-text-stroke-color: blue;
+}
+
+.intro-container .loading-num-box {
+    width: 39vw;
+    display: flex;
+    align-items: end;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.intro-container .loading-num-box .num-container {
+    width: 66.6666%;
+    height: 16.93vw;
+    position: relative;
+    display: flex;
+    align-items: end;
+    overflow: hidden;
+}
+
+.intro-container .loading-num-box .num-box {
+    position: absolute;
+    top: 0;
+}
+
+.intro-container .loading-num-box .num-box.first {
+    left: -0.8vw;
+    transform: translateY(0);
+    transition: 1.2s 0.2s ease-in-out;
+}
+
+/*.intro-container.on*/
+.intro-container.on .loading-num-box .num-box.first {
+    transform: translateY(calc(-100% + 19vw));
+}
+
+.intro-container .loading-num-box .num-box.second {
+    right: 0;
+    transform: translateY(0);
+    transition: 1.2s ease-in-out;
+}
+
+/*.intro-container.on*/
+.intro-container.on .loading-num-box .num-box.second {
+    transform: translateY(calc(-100% + 19vw));
+}
+
+.intro-container .loading-num-box p {
+    width: 100%;
+    text-align: end;
+    flex-grow: 1;
+}
+
+.intro-container .loading-num-box p {
+    font-size: 18.5vw;
+    line-height: 16vw;
+}
+
+.intro-container .loading-num-box p,
+.intro-container .loading-num-box .num-box p {
+    width: auto;
+    color: blue;
+    font-weight: 700;
+    box-sizing: border-box;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.intro-container .loading-num-box .num-box p {
+    font-size: 20.11vw;
+    letter-spacing: -0.05em;
+    line-height: 19vw;
+}
+
+
+

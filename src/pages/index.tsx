@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { makeAutoObservable, runInAction } from "mobx";
+import { action, makeAutoObservable, runInAction } from "mobx";
 import { useModel } from "../../ex/mobx";
 import { Feature } from "../feature/feature";
 import { RefObject, useEffect, useRef } from "react";
@@ -10,6 +10,7 @@ import DefaultCardView from "../view/defaultCardView";
 import SectionView from "../view/sectionView";
 import { isNil } from "lodash";
 import classNames from "classnames";
+import IntroView, { IntroModel } from "../view/introView";
 
 const MainPage = observer(() => {
   const mouseRef = useRef<HTMLDivElement>(null);
@@ -67,6 +68,17 @@ const MainPage = observer(() => {
     [Feature.shoppingLive]: useMoveSection(),
     [Feature.etc]: useMoveSection(),
   };
+
+  // intro
+  if (model.isIntro) {
+    return (
+      <IntroView
+        model={model.introModel}
+        isIntro={model.isIntro}
+        onOff={action(() => (model.isIntro = false))}
+      />
+    );
+  }
 
   return (
     <>
@@ -235,12 +247,7 @@ const MainPage = observer(() => {
         <img src="/assets/images/top_arrow.png" alt="top-btn" />
       </button>
 
-      <div ref={mouseRef} className="mouse">
-        <p>
-          SHIN YUJIN <br />
-          PORTFOLIO
-        </p>
-      </div>
+      <div ref={mouseRef} className="mouse"></div>
     </>
   );
 });
@@ -249,6 +256,8 @@ class MainModel {
   isShowTopButton = false;
   currentDetailSection: string | null = null;
   currentDetailItem: string | null = null;
+  isIntro = true;
+  introModel: IntroModel = new IntroModel();
 
   constructor() {
     makeAutoObservable(this);
