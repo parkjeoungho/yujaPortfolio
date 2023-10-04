@@ -11,9 +11,11 @@ import SectionView from "../view/sectionView";
 import { isNil } from "lodash";
 import classNames from "classnames";
 import IntroView, { IntroModel } from "../view/introView";
+import MainView, { MainSectionModel } from "../view/mainView";
+import { frontModel } from "../model/model";
 
 const MainPage = observer(() => {
-  const mouseRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
   const selectRef = useRef<HTMLDivElement>(null);
   const model = useModel(MainModel);
 
@@ -26,8 +28,24 @@ const MainPage = observer(() => {
         return;
       }
 
+      if (isNil(mainRef) || isNil(mainRef.current)) {
+        return;
+      }
+
       const winY = window.scrollY;
+      const winEndY = window.scrollY + window.innerHeight;
       const selectSectionY = selectRef.current.offsetTop + selectRef.current.scrollHeight;
+      const mainRefY = mainRef.current.offsetTop + mainRef.current.scrollHeight;
+
+      if (!frontModel.isIntro) {
+        if (winY >= mainRefY && model.mainModel.isInit) {
+          runInAction(() => (model.mainModel.isInit = false));
+        }
+
+        if (mainRefY >= winY && !model.mainModel.isInit) {
+          runInAction(() => (model.mainModel.isInit = true));
+        }
+      }
 
       if (winY > selectSectionY) {
         runInAction(() => (model.isShowTopButton = true));
@@ -37,23 +55,12 @@ const MainPage = observer(() => {
       runInAction(() => (model.isShowTopButton = false));
     };
 
-    const mouse = (e: MouseEvent) => {
-      if (isNil(mouseRef) || isNil(mouseRef.current)) {
-        return;
-      }
-
-      mouseRef.current.style.left = e.clientX + "px";
-      mouseRef.current.style.top = e.clientY + "px";
-    };
-
     update();
 
     window.addEventListener("scroll", update);
-    window.addEventListener("mousemove", mouse);
 
     return () => {
       window.removeEventListener("scroll", update);
-      window.removeEventListener("mousemove", mouse);
     };
   }, [model]);
 
@@ -69,35 +76,35 @@ const MainPage = observer(() => {
     [Feature.etc]: useMoveSection(),
   };
 
-  // intro
-  if (model.isIntro) {
-    return (
-      <IntroView
-        model={model.introModel}
-        isIntro={model.isIntro}
-        onOff={action(() => (model.isIntro = false))}
-      />
-    );
-  }
-
   return (
     <>
+      {/* intro */}
+      {frontModel.isIntro && (
+        <IntroView
+          model={model.introModel}
+          onOff={action(() => {
+            model.mainModel.isInit = true;
+            setTimeout(() => {
+              frontModel.onIntroOff();
+            }, 500);
+          })}
+        />
+      )}
+
       {/*main*/}
-      <div className="main">
-        <div className="inner-content">
-          <h2>MAIN SECTION</h2>
-        </div>
+      <div ref={mainRef}>
+        <MainView model={model.mainModel} />
       </div>
 
       {/*section-select-index*/}
       <div ref={selectRef} className="select-section">
-        <h2>감상을 원하는 아이콘을 선택하세요.</h2>
+        <h2 className="link">감상을 원하는 아이콘을 선택하세요.</h2>
 
         <div className="select-list-box">
           {contentSets.contentSet.map((feature, index) => (
             <div
               key={`select-menu-${index}`}
-              className="select-list"
+              className="select-list link"
               onClick={() => featureMenus[feature.featureType].onMoveToSection()}
             >
               <div className="select-list-image">
@@ -120,27 +127,34 @@ const MainPage = observer(() => {
               {content.items.map((item, index) => {
                 if (content.featureType === Feature.naver) {
                   return (
-                    <SectionView
+                    <div
                       key={`naver-${index}`}
-                      title={item.sectionTitle}
-                      contribution={item.contribution}
-                      hasDetail={item.isHasDetail}
+                      style={{
+                        paddingTop:
+                          index === 1 && (frontModel.isMid || frontModel.isMobile) ? "70px" : 0,
+                      }}
                     >
-                      {/*main*/}
-                      {index === 0 && <MainSliderView model={item} />}
+                      <SectionView
+                        title={item.sectionTitle}
+                        contribution={item.contribution}
+                        hasDetail={item.isHasDetail}
+                      >
+                        {/*main*/}
+                        {index === 0 && <MainSliderView model={item} />}
 
-                      {/*naver - mobile*/}
-                      {index !== 0 && (
-                        <DefaultCardView
-                          model={item}
-                          onDetail={(id: string | null, detail: string | null) =>
-                            model.setCurrentDetailSection(id, detail)
-                          }
-                          currentDetailSection={model.currentDetailSection}
-                          currentDetailItem={model.currentDetailItem}
-                        />
-                      )}
-                    </SectionView>
+                        {/*naver - mobile*/}
+                        {index !== 0 && (
+                          <DefaultCardView
+                            model={item}
+                            onDetail={(id: string | null, detail: string | null) =>
+                              model.setCurrentDetailSection(id, detail)
+                            }
+                            currentDetailSection={model.currentDetailSection}
+                            currentDetailItem={model.currentDetailItem}
+                          />
+                        )}
+                      </SectionView>
+                    </div>
                   );
                 }
 
@@ -211,13 +225,13 @@ const MainPage = observer(() => {
 
       <div className="footer section">
         <div className="footer-header">
-          <p>ABOUT ME</p>
+          <p className="link">ABOUT ME</p>
         </div>
         <div className="footer-content">
-          <p>
+          <p className="link">
             안녕하세요. <b>디자이너 신유진</b>입니다.
           </p>
-          <p>
+          <p className="link">
             원만한 소통&공감 능력을 갖춘 섬세한 디자이너 신유진입니다.
             <br />
             SNS 콘텐츠, 이벤트 프로모션, 상세 페이지 디자인 등을
@@ -225,7 +239,7 @@ const MainPage = observer(() => {
             전문으로 하는 그래픽 디자이너 신유진입니다.
           </p>
 
-          <p>
+          <p className="link">
             디자인하는 것을 좋아하고 머릿 속에서 상상하는 것을
             <br />
             시각적으로 표현하여 디자인의 가치를 재공합니다.
@@ -246,8 +260,6 @@ const MainPage = observer(() => {
       >
         <img src="/assets/images/top_arrow.png" alt="top-btn" />
       </button>
-
-      <div ref={mouseRef} className="mouse"></div>
     </>
   );
 });
@@ -258,6 +270,7 @@ class MainModel {
   currentDetailItem: string | null = null;
   isIntro = true;
   introModel: IntroModel = new IntroModel();
+  mainModel: MainSectionModel = new MainSectionModel();
 
   constructor() {
     makeAutoObservable(this);

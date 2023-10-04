@@ -13,10 +13,10 @@ const SectionView = observer(
       <div className={`main-content section-content ${props.className ?? ""}`}>
         <div className="section-head">
           <div>
-            <h2>{props.title}</h2>
-            {props.hasDetail && <p className="detail-info">클릭하면 세부 내용이 보입니다</p>}
+            <h2 className="link">{props.title}</h2>
+            {props.hasDetail && <p className="detail-info link">클릭하면 세부 내용이 보입니다</p>}
           </div>
-          <p>{props.contribution}</p>
+          <p className="link">{props.contribution}</p>
         </div>
         <div className="content-wrap">{props.children}</div>
       </div>

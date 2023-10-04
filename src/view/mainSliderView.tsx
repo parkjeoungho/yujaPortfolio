@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import Play from "../../public/assets/images/main/play.svg";
 import Pause from "../../public/assets/images/main/pause.svg";
 import classNames from "classnames";
+import { isNil } from "lodash";
 
 const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
   const ref = useRef<Slider>(null);
@@ -37,8 +38,7 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
     speed: 600,
     dots: true,
     cssEase: "ease-in-out",
-    nextArrow: <MainNextArrow addClassName="main-slide-arrow main-slide-next" />,
-    prevArrow: <MainPrevArrow addClassName="main-slide-arrow main-slide-prev" />,
+    arrows: false,
     appendDots: (dots: any) => (
       <div>
         <button
@@ -57,22 +57,64 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
   };
 
   return (
-    <div className="main-slider-container">
-      <div className="slider-wrap">
+    <div className="main-slider-container link">
+      <div className="slider-wrap ">
         <Slider ref={ref} {...settings}>
           {props.model.featureItems.map((feature, index) => (
             <div key={`main-slider-list-${index}`} className="slide-list">
-              <div className="slide-list-image">
+              <div className="slide-list-image ">
                 <img src={feature.featureImage} alt="main-item" />
               </div>
             </div>
           ))}
         </Slider>
       </div>
+
       <div className="gradient" />
+
+      <MainSliderNextArrow
+        addClassName="main-slide-arrow main-slide-next link"
+        onCLick={() => {
+          if (!ref || !ref.current) {
+            return;
+          }
+
+          ref.current.slickNext();
+        }}
+      />
+      <MainSliderPrevArrow
+        addClassName="main-slide-arrow main-slide-prev link"
+        onCLick={() => {
+          if (!ref || !ref.current) {
+            return;
+          }
+
+          ref.current.slickPrev();
+        }}
+      />
     </div>
   );
 });
+
+// @ts-ignore
+export function MainSliderPrevArrow(props) {
+  const { onClick, addClassName } = props;
+  return (
+    <div className={`${addClassName ?? ""}`} onClick={() => onClick()}>
+      <img src="/assets/images/main/main-prev.svg" alt="prev" />
+    </div>
+  );
+}
+
+// @ts-ignore
+export function MainSliderNextArrow(props) {
+  const { onClick, addClassName } = props;
+  return (
+    <div className={`${addClassName ?? ""}`} onClick={() => onClick()}>
+      <img src="/assets/images/main/main-next.svg" alt="next" />
+    </div>
+  );
+}
 
 // @ts-ignore
 export function MainPrevArrow(props) {

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { runInAction } from "mobx";
 import { useEffect, useRef } from "react";
 import { isEmpty, isNil } from "lodash";
+import { frontModel } from "../model/model";
 
 const DefaultCardView = observer(
   (props: {
@@ -37,12 +38,14 @@ const DefaultCardView = observer(
       return () => window.removeEventListener("resize", update);
     });
 
+    console.log(props.model.sliderViewCount);
+
     const settings = {
       className: "card-slider",
       centerMode: false,
       centerPadding: "10px",
       infinite: true,
-      slidesToShow: props.model.viewCount,
+      slidesToShow: props.model.sliderViewCount,
       slidesToScroll: 1,
       autoplay: false,
       autoplaySpeed: 2000,
@@ -53,6 +56,7 @@ const DefaultCardView = observer(
       prevArrow: <CardPrevArrow addClassName="card-slide-arrow card-slide-prev" />,
     };
 
+    console.log(props.model.isDetailTowLine);
     return (
       <>
         <div ref={ref} className="card-container">
@@ -64,6 +68,7 @@ const DefaultCardView = observer(
             >
               {props.model.featureItems.map((item, index) => (
                 <div
+                  className="link"
                   key={`naver-card-new-${index}`}
                   style={{
                     width: `${props.model.percent}%`,
@@ -80,7 +85,7 @@ const DefaultCardView = observer(
           )}
 
           {props.model.isSlide && (
-            <div className="card-slide-box">
+            <div className="card-slide-box link">
               <div>
                 <Slider {...settings}>
                   {props.model.featureItems.map((item, index) => (
@@ -114,24 +119,34 @@ const DefaultCardView = observer(
         <div
           className={classNames("card-detail-box", {
             on: props.currentDetailSection === props.model.sectionId,
+            isWrap: props.model.isDetailTowLine,
           })}
           style={{
             height:
-              props.currentDetailSection === props.model.sectionId ? props.model.detailSize : 0,
+              props.currentDetailSection === props.model.sectionId
+                ? props.model.getDetailSize(props.currentDetailItem)
+                : 0,
           }}
         >
           {!isNil(props.model.sectionId) && (
             <>
               {props.model.currentDetailList(props.currentDetailItem).map((item, index) => (
-                <div key={`feature-${props.currentDetailSection}-${index}`}>
-                  <div>
+                <div
+                  key={`feature-${props.currentDetailSection}-${index}`}
+                  style={{
+                    width: `${props.model.percent}%`,
+                    height: props.model.isDetailTowLine ? `${props.model.detailSize}px` : "100%",
+                    marginBottom: props.model.isDetailTowLine ? "10px" : 0,
+                  }}
+                >
+                  <div className="link">
                     <img src={item} alt="detail-item" />
                   </div>
                 </div>
               ))}
               {!isNil(props.currentDetailSection) &&
                 isEmpty(props.model.currentDetailList(props.currentDetailItem)) && (
-                  <p className="empty">세부 이미지가 없습니다</p>
+                  <p className="empty link">세부 이미지가 없습니다</p>
                 )}
             </>
           )}

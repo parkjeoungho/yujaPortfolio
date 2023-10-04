@@ -4,12 +4,40 @@ import { useRouter } from "next/router";
 import { some } from "lodash";
 import { observer } from "mobx-react-lite";
 import LayoutView from "./view/layout";
+import AnimatedCursor from "react-animated-cursor";
 
 export function App({ Component, pageProps }: AppProps) {
   return (
-    <LayoutSelector>
-      <Component {...pageProps} />
-    </LayoutSelector>
+    <>
+      <LayoutSelector>
+        <Component {...pageProps} />
+        <AnimatedCursor
+          color="255, 255, 255"
+          innerSize={1}
+          outerSize={50}
+          innerScale={1}
+          outerScale={1.7}
+          outerAlpha={1}
+          showSystemCursor={true}
+          outerStyle={{
+            mixBlendMode: "exclusion",
+          }}
+          clickables={[
+            "a",
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            "label[for]",
+            "select",
+            "textarea",
+            "button",
+            ".link",
+          ]}
+        />
+      </LayoutSelector>
+    </>
   );
 }
 

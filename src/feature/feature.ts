@@ -1,5 +1,6 @@
-import { makeAutoObservable } from "mobx";
-import { isNil } from "lodash";
+import { makeAutoObservable, runInAction } from "mobx";
+import { isEmpty, isNil } from "lodash";
+import { frontModel } from "../model/model";
 
 export enum Feature {
   naver = "NAVER",
@@ -45,10 +46,13 @@ export class FeatureSectionModel {
   contribution: string;
   isTwoLine?: boolean | null;
   viewCount: number;
+  midViewCount: number;
+  mobileViewCount: number;
   size: number;
   featureItems: FeatureItemModel[];
   currentItem?: number | null;
   detailSize = 0;
+  isDetailTowLine = false;
 
   constructor(props: {
     isSlide: boolean;
@@ -59,6 +63,8 @@ export class FeatureSectionModel {
     featureItems: FeatureItemModel[];
     isTwoLine?: boolean;
     viewCount: number;
+    midViewCount: number;
+    mobileViewCount: number;
     size: number;
     currentItem?: number | null;
   }) {
@@ -70,13 +76,52 @@ export class FeatureSectionModel {
     this.featureItems = props.featureItems;
     this.isTwoLine = props.isTwoLine ?? null;
     this.viewCount = props.viewCount;
+    this.midViewCount = props.midViewCount;
+    this.mobileViewCount = props.mobileViewCount;
     this.size = props.size;
     this.currentItem = props.currentItem ?? null;
     makeAutoObservable(this);
   }
 
   get percent() {
+    if (frontModel.isMid) {
+      return 100 / this.midViewCount;
+    }
+
+    if (frontModel.isMobile) {
+      return 100 / this.mobileViewCount;
+    }
+
     return 100 / this.viewCount;
+  }
+
+  get sliderViewCount() {
+    if (frontModel.isMid) {
+      return this.midViewCount;
+    }
+
+    if (frontModel.isMobile) {
+      return this.mobileViewCount;
+    }
+
+    return this.viewCount;
+  }
+
+  getDetailSize(id: string | null) {
+    if (isEmpty(this.currentDetailList(id))) {
+      runInAction(() => (this.isDetailTowLine = false));
+      return this.detailSize;
+    }
+
+    console.log(this.currentDetailList(id).length, "여기!!");
+
+    if (this.sliderViewCount >= this.currentDetailList(id).length) {
+      runInAction(() => (this.isDetailTowLine = false));
+      return this.detailSize;
+    }
+
+    runInAction(() => (this.isDetailTowLine = true));
+    return this.detailSize * 2 + 10;
   }
 
   currentDetailList(id: string | null) {
