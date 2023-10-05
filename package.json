@@ -2,7 +2,7 @@
   "name": "yuja-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://parkjeoungho.github.io/yujaPortfolio",
+  "homepage": "https://parkjeoungho.github.io/yujaPortfolio/",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",

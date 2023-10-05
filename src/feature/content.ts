@@ -1,5 +1,3 @@
-import { config } from "../config";
-import { frontModel } from "../model/model";
 import {
   ContentModel,
   Feature,
@@ -8,10 +6,12 @@ import {
   FeatureSectionModel,
 } from "./feature";
 
+const prefix = "https://parkjeoungho.github.io/yujaPortfolio/";
+
 export const featureNaver: FeatureModel = new FeatureModel({
   featureType: Feature.naver,
   featureName: "스마트스토어",
-  featureIcon: `${config.prefix}/assets/images/index_icon/naver.png`,
+  featureIcon: `${prefix}/assets/images/index_icon/naver.png`,
   items: [
     new FeatureSectionModel({
       isSlide: true,
@@ -31,31 +31,31 @@ export const featureNaver: FeatureModel = new FeatureModel({
         }),
         new FeatureItemModel({
           featureId: "naver-coolness",
-          featureImage: `${config.prefix}/assets/images/main/coolness_1200x490.png`,
+          featureImage: `${prefix}/assets/images/main/coolness_1200x490.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-diet",
-          featureImage: `${config.prefix}/assets/images/main/diet_1200x490.png`,
+          featureImage: `${prefix}/assets/images/main/diet_1200x490.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-summer",
-          featureImage: `${config.prefix}/assets/images/main/summer_1200x490.png`,
+          featureImage: `${prefix}/assets/images/main/summer_1200x490.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-choose",
-          featureImage: `${config.prefix}/assets/images/main/choose_1200x490.png`,
+          featureImage: `${prefix}/assets/images/main/choose_1200x490.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-kimchi",
-          featureImage: `${config.prefix}/assets/images/main/kimchi_1200x490.png`,
+          featureImage: `${prefix}/assets/images/main/kimchi_1200x490.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-notice",
-          featureImage: `${config.prefix}/assets/images/main/notice_1200x490.jpg`,
+          featureImage: `${prefix}/assets/images/main/notice_1200x490.jpg`,
         }),
         new FeatureItemModel({
           featureId: "naver-dumpling",
-          featureImage: `${config.prefix}/assets/images/main/dumpling_1200x490.png`,
+          featureImage: `${prefix}/assets/images/main/dumpling_1200x490.png`,
         }),
       ],
     }),
@@ -74,43 +74,43 @@ export const featureNaver: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "naver-mobile-dumpling",
-          featureImage: `${config.prefix}/assets/images/section_02/dumpling.png`,
+          featureImage: `${prefix}/assets/images/section_02/dumpling.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-choose",
-          featureImage: `${config.prefix}/assets/images/section_02/choose.png`,
+          featureImage: `${prefix}/assets/images/section_02/choose.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-notice",
-          featureImage: `${config.prefix}/assets/images/section_02/notice.png`,
+          featureImage: `${prefix}/assets/images/section_02/notice.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-deliciousdiet",
-          featureImage: `${config.prefix}/assets/images/section_02/deliciousdiet.png`,
+          featureImage: `${prefix}/assets/images/section_02/deliciousdiet.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-HomeCance",
-          featureImage: `${config.prefix}/assets/images/section_02/HomeCance.png`,
+          featureImage: `${prefix}/assets/images/section_02/HomeCance.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-juicy",
-          featureImage: `${config.prefix}/assets/images/section_02/juicy.png`,
+          featureImage: `${prefix}/assets/images/section_02/juicy.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-diet",
-          featureImage: `${config.prefix}/assets/images/section_02/diet.png`,
+          featureImage: `${prefix}/assets/images/section_02/diet.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-NonghyupJuice",
-          featureImage: `${config.prefix}/assets/images/section_02/NonghyupJuice.png`,
+          featureImage: `${prefix}/assets/images/section_02/NonghyupJuice.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-Holidays",
-          featureImage: `${config.prefix}/assets/images/section_02/Holidays.jpg`,
+          featureImage: `${prefix}/assets/images/section_02/Holidays.jpg`,
         }),
         new FeatureItemModel({
           featureId: "naver-mobile-summer",
-          featureImage: `${config.prefix}/assets/images/section_02/summer.png`,
+          featureImage: `${prefix}/assets/images/section_02/summer.png`,
         }),
       ],
     }),
@@ -120,7 +120,7 @@ export const featureNaver: FeatureModel = new FeatureModel({
 export const featureInstagram: FeatureModel = new FeatureModel({
   featureType: Feature.instagram,
   featureName: "인스타그램",
-  featureIcon: `${config.prefix}/assets/images/index_icon/instagram.png`,
+  featureIcon: `${prefix}/assets/images/index_icon/instagram.png`,
   items: [
     new FeatureSectionModel({
       isSlide: true,
@@ -136,82 +136,82 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "instagram-integrated",
-          featureImage: `${config.prefix}/assets/images/section_03/01/h/integrated_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/01/h/integrated_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/01/h/integrated_02.png`,
-            `${config.prefix}/assets/images/section_03/01/h/integrated_03.png`,
-            `${config.prefix}/assets/images/section_03/01/h/integrated_04.png`,
-            `${config.prefix}/assets/images/section_03/01/h/integrated_05.png`,
+            `${prefix}/assets/images/section_03/01/h/integrated_02.png`,
+            `${prefix}/assets/images/section_03/01/h/integrated_03.png`,
+            `${prefix}/assets/images/section_03/01/h/integrated_04.png`,
+            `${prefix}/assets/images/section_03/01/h/integrated_05.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-Supporters",
-          featureImage: `${config.prefix}/assets/images/section_03/02/h/Supporters_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/02/h/Supporters_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/02/h/Supporters_02.png`,
-            `${config.prefix}/assets/images/section_03/02/h/Supporters_03.png`,
+            `${prefix}/assets/images/section_03/02/h/Supporters_02.png`,
+            `${prefix}/assets/images/section_03/02/h/Supporters_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-submit",
-          featureImage: `${config.prefix}/assets/images/section_03/03/h/submit_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/03/h/submit_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/03/h/submit_02.png`,
-            `${config.prefix}/assets/images/section_03/03/h/submit_03.png`,
-            `${config.prefix}/assets/images/section_03/03/h/submit_04.png`,
+            `${prefix}/assets/images/section_03/03/h/submit_02.png`,
+            `${prefix}/assets/images/section_03/03/h/submit_03.png`,
+            `${prefix}/assets/images/section_03/03/h/submit_04.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-payment",
-          featureImage: `${config.prefix}/assets/images/section_03/04/h/payment_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/04/h/payment_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/04/h/payment_02.png`,
-            `${config.prefix}/assets/images/section_03/04/h/payment_03.png`,
-            `${config.prefix}/assets/images/section_03/04/h/payment_04.png`,
-            `${config.prefix}/assets/images/section_03/04/h/payment_05.png`,
+            `${prefix}/assets/images/section_03/04/h/payment_02.png`,
+            `${prefix}/assets/images/section_03/04/h/payment_03.png`,
+            `${prefix}/assets/images/section_03/04/h/payment_04.png`,
+            `${prefix}/assets/images/section_03/04/h/payment_05.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-cancellation",
-          featureImage: `${config.prefix}/assets/images/section_03/05/h/cancellation_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/05/h/cancellation_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/05/h/cancellation_02.png`,
-            `${config.prefix}/assets/images/section_03/05/h/cancellation_03.png`,
+            `${prefix}/assets/images/section_03/05/h/cancellation_02.png`,
+            `${prefix}/assets/images/section_03/05/h/cancellation_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-event",
-          featureImage: `${config.prefix}/assets/images/section_03/06/h/event_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/06/h/event_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/06/h/event_02.png`,
-            `${config.prefix}/assets/images/section_03/06/h/event_03.png`,
+            `${prefix}/assets/images/section_03/06/h/event_02.png`,
+            `${prefix}/assets/images/section_03/06/h/event_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-map",
-          featureImage: `${config.prefix}/assets/images/section_03/07/h/map_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/07/h/map_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/07/h/map_02.png`,
-            `${config.prefix}/assets/images/section_03/07/h/map_03.png`,
-            `${config.prefix}/assets/images/section_03/07/h/map_04.png`,
-            `${config.prefix}/assets/images/section_03/07/h/map_05.png`,
+            `${prefix}/assets/images/section_03/07/h/map_02.png`,
+            `${prefix}/assets/images/section_03/07/h/map_03.png`,
+            `${prefix}/assets/images/section_03/07/h/map_04.png`,
+            `${prefix}/assets/images/section_03/07/h/map_05.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-book",
-          featureImage: `${config.prefix}/assets/images/section_03/08/h/book_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/08/h/book_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/08/h/book_02.png`,
-            `${config.prefix}/assets/images/section_03/08/h/book_03.png`,
-            `${config.prefix}/assets/images/section_03/08/h/book_04.png`,
+            `${prefix}/assets/images/section_03/08/h/book_02.png`,
+            `${prefix}/assets/images/section_03/08/h/book_03.png`,
+            `${prefix}/assets/images/section_03/08/h/book_04.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "instagram-house",
-          featureImage: `${config.prefix}/assets/images/section_03/09/h/house_01.png`,
+          featureImage: `${prefix}/assets/images/section_03/09/h/house_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_03/09/h/house_02.png`,
-            `${config.prefix}/assets/images/section_03/09/h/house_03.png`,
+            `${prefix}/assets/images/section_03/09/h/house_02.png`,
+            `${prefix}/assets/images/section_03/09/h/house_03.png`,
           ],
         }),
       ],
@@ -230,39 +230,39 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "advertisement-konjac",
-          featureImage: `${config.prefix}/assets/images/section_05/h/konjac_01.png`,
+          featureImage: `${prefix}/assets/images/section_05/h/konjac_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_05/h/konjac_02.png`,
-            `${config.prefix}/assets/images/section_05/h/konjac_03.png`,
+            `${prefix}/assets/images/section_05/h/konjac_02.png`,
+            `${prefix}/assets/images/section_05/h/konjac_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "advertisement-refrigerator",
-          featureImage: `${config.prefix}/assets/images/section_05/h/refrigerator_01.png`,
+          featureImage: `${prefix}/assets/images/section_05/h/refrigerator_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_05/h/refrigerator_02.png`,
-            `${config.prefix}/assets/images/section_05/h/refrigerator_03.png`,
+            `${prefix}/assets/images/section_05/h/refrigerator_02.png`,
+            `${prefix}/assets/images/section_05/h/refrigerator_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "advertisement-Samgyetang",
-          featureImage: `${config.prefix}/assets/images/section_05/h/Samgyetang_01.png`,
+          featureImage: `${prefix}/assets/images/section_05/h/Samgyetang_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_05/h/Samgyetang_02.png`,
-            `${config.prefix}/assets/images/section_05/h/Samgyetang_03.png`,
+            `${prefix}/assets/images/section_05/h/Samgyetang_02.png`,
+            `${prefix}/assets/images/section_05/h/Samgyetang_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "advertisement-foodweek",
-          featureImage: `${config.prefix}/assets/images/section_05/h/foodweek.png`,
+          featureImage: `${prefix}/assets/images/section_05/h/foodweek.png`,
         }),
         new FeatureItemModel({
           featureId: "advertisement-coupon",
-          featureImage: `${config.prefix}/assets/images/section_05/h/coupon.png`,
+          featureImage: `${prefix}/assets/images/section_05/h/coupon.png`,
         }),
         new FeatureItemModel({
           featureId: "advertisement-happynewyear",
-          featureImage: `${config.prefix}/assets/images/section_05/h/happynewyear.png`,
+          featureImage: `${prefix}/assets/images/section_05/h/happynewyear.png`,
         }),
       ],
     }),
@@ -280,36 +280,36 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "iloom-appointment",
-          featureImage: `${config.prefix}/assets/images/section_04/h/appointment_01.png`,
-          featureDetailImages: [`${config.prefix}/assets/images/section_04/h/appointment_02.png`],
+          featureImage: `${prefix}/assets/images/section_04/h/appointment_01.png`,
+          featureDetailImages: [`${prefix}/assets/images/section_04/h/appointment_02.png`],
         }),
         new FeatureItemModel({
           featureId: "iloom-honey",
-          featureImage: `${config.prefix}/assets/images/section_04/h/honey_01.png`,
+          featureImage: `${prefix}/assets/images/section_04/h/honey_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_04/h/honey_02.png`,
-            `${config.prefix}/assets/images/section_04/h/honey_03.png`,
+            `${prefix}/assets/images/section_04/h/honey_02.png`,
+            `${prefix}/assets/images/section_04/h/honey_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "iloom-keyword",
-          featureImage: `${config.prefix}/assets/images/section_04/h/keyword_01.png`,
-          featureDetailImages: [`${config.prefix}/assets/images/section_04/h/keyword_02.png`],
+          featureImage: `${prefix}/assets/images/section_04/h/keyword_01.png`,
+          featureDetailImages: [`${prefix}/assets/images/section_04/h/keyword_02.png`],
         }),
         new FeatureItemModel({
           featureId: "iloom-secret",
-          featureImage: `${config.prefix}/assets/images/section_04/h/secret_01.png`,
-          featureDetailImages: [`${config.prefix}/assets/images/section_04/h/secret_02.png`],
+          featureImage: `${prefix}/assets/images/section_04/h/secret_01.png`,
+          featureDetailImages: [`${prefix}/assets/images/section_04/h/secret_02.png`],
         }),
         new FeatureItemModel({
           featureId: "iloom-test",
-          featureImage: `${config.prefix}/assets/images/section_04/h/test_01.png`,
+          featureImage: `${prefix}/assets/images/section_04/h/test_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_04/h/test_02.png`,
-            `${config.prefix}/assets/images/section_04/h/test_03.png`,
-            `${config.prefix}/assets/images/section_04/h/test_04.png`,
-            `${config.prefix}/assets/images/section_04/h/test_05.png`,
-            `${config.prefix}/assets/images/section_04/h/test_06.png`,
+            `${prefix}/assets/images/section_04/h/test_02.png`,
+            `${prefix}/assets/images/section_04/h/test_03.png`,
+            `${prefix}/assets/images/section_04/h/test_04.png`,
+            `${prefix}/assets/images/section_04/h/test_05.png`,
+            `${prefix}/assets/images/section_04/h/test_06.png`,
           ],
         }),
       ],
@@ -328,39 +328,39 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "eco-brandweek",
-          featureImage: `${config.prefix}/assets/images/section_06/h/brandweek.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/brandweek.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-experiencegroup",
-          featureImage: `${config.prefix}/assets/images/section_06/h/experiencegroup.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/experiencegroup.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-handwash",
-          featureImage: `${config.prefix}/assets/images/section_06/h/handwash.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/handwash.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-Herb",
-          featureImage: `${config.prefix}/assets/images/section_06/h/Herb.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/Herb.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-oclean",
-          featureImage: `${config.prefix}/assets/images/section_06/h/oclean.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/oclean.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-ocleanreview",
-          featureImage: `${config.prefix}/assets/images/section_06/h/ocleanreview.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/ocleanreview.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-soap",
-          featureImage: `${config.prefix}/assets/images/section_06/h/soap.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/soap.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-soki",
-          featureImage: `${config.prefix}/assets/images/section_06/h/soki.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/soki.png`,
         }),
         new FeatureItemModel({
           featureId: "eco-tissue",
-          featureImage: `${config.prefix}/assets/images/section_06/h/tissue.png`,
+          featureImage: `${prefix}/assets/images/section_06/h/tissue.png`,
         }),
       ],
     }),
@@ -378,27 +378,27 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "health-advertisement-01",
-          featureImage: `${config.prefix}/assets/images/section_07/h/advertisement_01.png`,
+          featureImage: `${prefix}/assets/images/section_07/h/advertisement_01.png`,
         }),
         new FeatureItemModel({
           featureId: "health-advertisement-02",
-          featureImage: `${config.prefix}/assets/images/section_07/h/advertisement_02.png`,
+          featureImage: `${prefix}/assets/images/section_07/h/advertisement_02.png`,
         }),
         new FeatureItemModel({
           featureId: "health-advertisement-03",
-          featureImage: `${config.prefix}/assets/images/section_07/h/advertisement_03.png`,
+          featureImage: `${prefix}/assets/images/section_07/h/advertisement_03.png`,
         }),
         new FeatureItemModel({
           featureId: "health-advertisement-04",
-          featureImage: `${config.prefix}/assets/images/section_07/h/advertisement_04.png`,
+          featureImage: `${prefix}/assets/images/section_07/h/advertisement_04.png`,
         }),
         new FeatureItemModel({
           featureId: "health-advertisement-05",
-          featureImage: `${config.prefix}/assets/images/section_07/h/advertisement_05.png`,
+          featureImage: `${prefix}/assets/images/section_07/h/advertisement_05.png`,
         }),
         new FeatureItemModel({
           featureId: "health-advertisement-06",
-          featureImage: `${config.prefix}/assets/images/section_07/h/advertisement_06.png`,
+          featureImage: `${prefix}/assets/images/section_07/h/advertisement_06.png`,
         }),
       ],
     }),
@@ -416,23 +416,23 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "fruit-dif",
-          featureImage: `${config.prefix}/assets/images/section_08/h/dif.png`,
+          featureImage: `${prefix}/assets/images/section_08/h/dif.png`,
         }),
         new FeatureItemModel({
           featureId: "fruit-cherry",
-          featureImage: `${config.prefix}/assets/images/section_08/h/cherry.png`,
+          featureImage: `${prefix}/assets/images/section_08/h/cherry.png`,
         }),
         new FeatureItemModel({
           featureId: "fruit-peach",
-          featureImage: `${config.prefix}/assets/images/section_08/h/peach.png`,
+          featureImage: `${prefix}/assets/images/section_08/h/peach.png`,
         }),
         new FeatureItemModel({
           featureId: "fruit-persimmon",
-          featureImage: `${config.prefix}/assets/images/section_08/h/persimmon.png`,
+          featureImage: `${prefix}/assets/images/section_08/h/persimmon.png`,
         }),
         new FeatureItemModel({
           featureId: "fruit-watermelon",
-          featureImage: `${config.prefix}/assets/images/section_08/h/watermelon.png`,
+          featureImage: `${prefix}/assets/images/section_08/h/watermelon.png`,
         }),
       ],
     }),
@@ -442,7 +442,7 @@ export const featureInstagram: FeatureModel = new FeatureModel({
 export const featureShoppingLive: FeatureModel = new FeatureModel({
   featureType: Feature.shoppingLive,
   featureName: "쇼핑 라이브",
-  featureIcon: `${config.prefix}/assets/images/index_icon/live.png`,
+  featureIcon: `${prefix}/assets/images/index_icon/live.png`,
   items: [
     new FeatureSectionModel({
       isSlide: true,
@@ -458,47 +458,47 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "live-sandybeach",
-          featureImage: `${config.prefix}/assets/images/section_09/01/h/sandybeach_01.png`,
+          featureImage: `${prefix}/assets/images/section_09/01/h/sandybeach_01.png`,
           featureDetailImages: [
-            `/${config.prefix}/assets/images/section_09/01/h/sandybeach_02.png`,
-            `/${config.prefix}/assets/images/section_09/01/h/sandybeach_03.png`,
-            `/${config.prefix}/assets/images/section_09/01/h/sandybeach_04.png`,
-            `/${config.prefix}/assets/images/section_09/01/h/sandybeach_05.png`,
+            `/${prefix}/assets/images/section_09/01/h/sandybeach_02.png`,
+            `/${prefix}/assets/images/section_09/01/h/sandybeach_03.png`,
+            `/${prefix}/assets/images/section_09/01/h/sandybeach_04.png`,
+            `/${prefix}/assets/images/section_09/01/h/sandybeach_05.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "live-brick",
-          featureImage: `${config.prefix}/assets/images/section_09/02/h/brick_01.png`,
+          featureImage: `${prefix}/assets/images/section_09/02/h/brick_01.png`,
           featureDetailImages: [
-            `/${config.prefix}/assets/images/section_09/02/h/brick_02.png`,
-            `/${config.prefix}/assets/images/section_09/02/h/brick_03.png`,
+            `/${prefix}/assets/images/section_09/02/h/brick_02.png`,
+            `/${prefix}/assets/images/section_09/02/h/brick_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "live-rainy",
-          featureImage: `${config.prefix}/assets/images/section_09/03/h/rainy_01.png`,
+          featureImage: `${prefix}/assets/images/section_09/03/h/rainy_01.png`,
           featureDetailImages: [
-            `/${config.prefix}/assets/images/section_09/03/h/rainy_02.png`,
-            `/${config.prefix}/assets/images/section_09/03/h/rainy_03.png`,
-            `/${config.prefix}/assets/images/section_09/03/h/rainy_04.png`,
+            `/${prefix}/assets/images/section_09/03/h/rainy_02.png`,
+            `/${prefix}/assets/images/section_09/03/h/rainy_03.png`,
+            `/${prefix}/assets/images/section_09/03/h/rainy_04.png`,
           ],
         }),
 
         new FeatureItemModel({
           featureId: "live-px",
-          featureImage: `${config.prefix}/assets/images/section_09/05/h/px_01.png`,
+          featureImage: `${prefix}/assets/images/section_09/05/h/px_01.png`,
           featureDetailImages: [
-            `/${config.prefix}/assets/images/section_09/05/h/px_02.png`,
-            `/${config.prefix}/assets/images/section_09/05/h/px_03.png`,
-            `/${config.prefix}/assets/images/section_09/05/h/px_04.png`,
+            `/${prefix}/assets/images/section_09/05/h/px_02.png`,
+            `/${prefix}/assets/images/section_09/05/h/px_03.png`,
+            `/${prefix}/assets/images/section_09/05/h/px_04.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "live-quiz",
-          featureImage: `${config.prefix}/assets/images/section_09/04/h/quiz_01.png`,
+          featureImage: `${prefix}/assets/images/section_09/04/h/quiz_01.png`,
           featureDetailImages: [
-            `${config.prefix}/assets/images/section_09/04/h/quiz_02.png`,
-            `${config.prefix}/assets/images/section_09/04/h/quiz_03.png`,
+            `${prefix}/assets/images/section_09/04/h/quiz_02.png`,
+            `${prefix}/assets/images/section_09/04/h/quiz_03.png`,
           ],
         }),
       ],
@@ -509,7 +509,7 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
 export const featureEtc: FeatureModel = new FeatureModel({
   featureType: Feature.etc,
   featureName: "기타",
-  featureIcon: `${config.prefix}/assets/images/index_icon/etc.png`,
+  featureIcon: `${prefix}/assets/images/index_icon/etc.png`,
   items: [
     new FeatureSectionModel({
       isSlide: true,
@@ -525,27 +525,27 @@ export const featureEtc: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "etc-supporters",
-          featureImage: `${config.prefix}/assets/images/section_10/h/supporters.png`,
+          featureImage: `${prefix}/assets/images/section_10/h/supporters.png`,
         }),
         new FeatureItemModel({
           featureId: "etc-money",
-          featureImage: `${config.prefix}/assets/images/section_10/h/money.png`,
+          featureImage: `${prefix}/assets/images/section_10/h/money.png`,
         }),
         new FeatureItemModel({
           featureId: "etc-online",
-          featureImage: `${config.prefix}/assets/images/section_10/h/online.png`,
+          featureImage: `${prefix}/assets/images/section_10/h/online.png`,
         }),
         new FeatureItemModel({
           featureId: "etc-golden",
-          featureImage: `${config.prefix}/assets/images/section_10/h/golden.png`,
+          featureImage: `${prefix}/assets/images/section_10/h/golden.png`,
         }),
         new FeatureItemModel({
           featureId: "etc-Sight",
-          featureImage: `${config.prefix}/assets/images/section_10/h/Sight.png`,
+          featureImage: `${prefix}/assets/images/section_10/h/Sight.png`,
         }),
         new FeatureItemModel({
           featureId: "etc-live",
-          featureImage: `${config.prefix}/assets/images/section_10/h/live.png`,
+          featureImage: `${prefix}/assets/images/section_10/h/live.png`,
         }),
       ],
     }),
@@ -563,27 +563,27 @@ export const featureEtc: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "news-map",
-          featureImage: `${config.prefix}/assets/images/section_11/h/map.png`,
+          featureImage: `${prefix}/assets/images/section_11/h/map.png`,
         }),
         new FeatureItemModel({
           featureId: "news-lalaland",
-          featureImage: `${config.prefix}/assets/images/section_11/h/lalaland.png`,
+          featureImage: `${prefix}/assets/images/section_11/h/lalaland.png`,
         }),
         new FeatureItemModel({
           featureId: "news-organic",
-          featureImage: `${config.prefix}/assets/images/section_11/h/organic.png`,
+          featureImage: `${prefix}/assets/images/section_11/h/organic.png`,
         }),
         new FeatureItemModel({
           featureId: "news-foodpoisoning",
-          featureImage: `${config.prefix}/assets/images/section_11/h/foodpoisoning.png`,
+          featureImage: `${prefix}/assets/images/section_11/h/foodpoisoning.png`,
         }),
         new FeatureItemModel({
           featureId: "news-airplane",
-          featureImage: `${config.prefix}/assets/images/section_11/h/airplane.png`,
+          featureImage: `${prefix}/assets/images/section_11/h/airplane.png`,
         }),
         new FeatureItemModel({
           featureId: "news-application",
-          featureImage: `${config.prefix}/assets/images/section_11/h/application.png`,
+          featureImage: `${prefix}/assets/images/section_11/h/application.png`,
         }),
       ],
     }),
@@ -601,23 +601,23 @@ export const featureEtc: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "summer-summer",
-          featureImage: `${config.prefix}/assets/images/section_12/h/summer.png`,
+          featureImage: `${prefix}/assets/images/section_12/h/summer.png`,
         }),
         new FeatureItemModel({
           featureId: "summer-swimming",
-          featureImage: `${config.prefix}/assets/images/section_12/h/swimming.png`,
+          featureImage: `${prefix}/assets/images/section_12/h/swimming.png`,
         }),
         new FeatureItemModel({
           featureId: "summer-11stsummer",
-          featureImage: `${config.prefix}/assets/images/section_12/h/11stsummer.png`,
+          featureImage: `${prefix}/assets/images/section_12/h/11stsummer.png`,
         }),
         new FeatureItemModel({
           featureId: "summer-daisosummer",
-          featureImage: `${config.prefix}/assets/images/section_12/h/daisosummer.png`,
+          featureImage: `${prefix}/assets/images/section_12/h/daisosummer.png`,
         }),
         new FeatureItemModel({
           featureId: "summer-ocean",
-          featureImage: `${config.prefix}/assets/images/section_12/h/ocean.png`,
+          featureImage: `${prefix}/assets/images/section_12/h/ocean.png`,
         }),
       ],
     }),
