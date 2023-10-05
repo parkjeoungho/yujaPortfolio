@@ -3,6 +3,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import classNames from "classnames";
 import { useEffect } from "react";
 import { frontModel } from "../model/model";
+import { prefix } from "../feature/content";
 
 const MainView = observer((props: { model: MainSectionModel }) => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const MainView = observer((props: { model: MainSectionModel }) => {
 
       <div className="scroll">
         <div className="scroll-image link">
-          <img src="/assets/images/scroll.svg" alt="scroll" />
+          <img src={`${prefix}/assets/images/scroll.svg`} alt="scroll" />
         </div>
         <p className="link">아래로 스크롤</p>
       </div>

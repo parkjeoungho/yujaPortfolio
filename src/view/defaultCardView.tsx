@@ -6,6 +6,7 @@ import { runInAction } from "mobx";
 import { useEffect, useRef } from "react";
 import { isEmpty, isNil } from "lodash";
 import { frontModel } from "../model/model";
+import { prefix } from "../feature/content";
 
 const DefaultCardView = observer(
   (props: {
@@ -160,7 +161,7 @@ export function CardPrevArrow(props) {
     <div className={`${className} ${addClassName ?? ""}`} style={{ ...style }} onClick={onClick}>
       <div className="inner-arrow-box">
         <div>
-          <img src="/assets/images/main/main-prev.svg" alt="prev" />
+          <img src={`${prefix}/assets/images/main/main-prev.svg`} alt="prev" />
         </div>
       </div>
     </div>
@@ -174,7 +175,7 @@ export function CardNextArrow(props) {
     <div className={`${className} ${addClassName ?? ""}`} style={{ ...style }} onClick={onClick}>
       <div className="inner-arrow-box">
         <div>
-          <img src="/assets/images/main/main-next.svg" alt="next" />
+          <img src={`${prefix}/assets/images/main/main-next.svg`} alt="next" />
         </div>
       </div>
     </div>

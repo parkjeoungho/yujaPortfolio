@@ -6,7 +6,7 @@ import {
   FeatureSectionModel,
 } from "./feature";
 
-const prefix = "https://parkjeoungho.github.io/yujaPortfolio/";
+export const prefix = "https://parkjeoungho.github.io/yujaPortfolio/";
 
 export const featureNaver: FeatureModel = new FeatureModel({
   featureType: Feature.naver,
@@ -27,7 +27,7 @@ export const featureNaver: FeatureModel = new FeatureModel({
       featureItems: [
         new FeatureItemModel({
           featureId: "naver-juicy",
-          featureImage: "/assets/images/main/juicy_1200x490.png",
+          featureImage: `${prefix}/assets/images/main/juicy_1200x490.png`,
         }),
         new FeatureItemModel({
           featureId: "naver-coolness",

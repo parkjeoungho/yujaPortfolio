@@ -7,6 +7,7 @@ import Pause from "../../public/assets/images/main/pause.svg";
 import classNames from "classnames";
 import { isNil } from "lodash";
 import { frontModel } from "../model/model";
+import { prefix } from "../feature/content";
 
 const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
   const ref = useRef<Slider>(null);
@@ -100,7 +101,7 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
 export function MainSliderPrevArrow(props: { onClick: () => void; addClassName: string }) {
   return (
     <div className={`${props.addClassName ?? ""}`} onClick={() => props.onClick()}>
-      <img src="/assets/images/main/main-prev.svg" alt="prev" />
+      <img src={`${prefix}/assets/images/main/main-prev.svg`} alt="prev" />
     </div>
   );
 }
@@ -108,7 +109,7 @@ export function MainSliderPrevArrow(props: { onClick: () => void; addClassName: 
 export function MainSliderNextArrow(props: { onClick: () => void; addClassName: string }) {
   return (
     <div className={`${props.addClassName ?? ""}`} onClick={() => props.onClick()}>
-      <img src="/assets/images/main/main-next.svg" alt="next" />
+      <img src={`${prefix}/assets/images/main/main-next.svg`} alt="next" />
     </div>
   );
 }
@@ -118,7 +119,7 @@ export function MainPrevArrow(props) {
   const { className, style, onClick, addClassName } = props;
   return (
     <div className={`${className} ${addClassName ?? ""}`} style={{ ...style }} onClick={onClick}>
-      <img src="/assets/images/main/main-prev.svg" alt="prev" />
+      <img src={`${prefix}/assets/images/main/main-prev.svg`} alt="prev" />
     </div>
   );
 }
@@ -128,7 +129,7 @@ export function MainNextArrow(props) {
   const { className, style, onClick, addClassName } = props;
   return (
     <div className={`${className} ${addClassName ?? ""}`} style={{ ...style }} onClick={onClick}>
-      <img src="/assets/images/main/main-next.svg" alt="next" />
+      <img src={`${prefix}/assets/images/main/main-next.svg`} alt="next" />
     </div>
   );
 }

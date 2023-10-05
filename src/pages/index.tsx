@@ -4,7 +4,7 @@ import { useModel } from "../../ex/mobx";
 import { Feature } from "../feature/feature";
 import { RefObject, useEffect, useRef } from "react";
 import { useMoveSection } from "../hooks/hooks";
-import { contentSets } from "../feature/content";
+import { contentSets, prefix } from "../feature/content";
 import MainSliderView from "../view/mainSliderView";
 import DefaultCardView from "../view/defaultCardView";
 import SectionView from "../view/sectionView";
@@ -274,7 +274,7 @@ const MainPage = observer(() => {
           selectRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
         }}
       >
-        <img src="/assets/images/top_arrow.png" alt="top-btn" />
+        <img src={`${prefix}/assets/images/top_arrow.png`} alt="top-btn" />
       </button>
     </>
   );
