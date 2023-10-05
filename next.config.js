@@ -1,10 +1,10 @@
 /** @type {import("next").NextConfig} */
+const debug = process.env.NODE_ENV !== "production";
+const repository = "http://parkjeoungho.github.io/yujaPortfolio";
+
 const nextConfig = {
-  basePath: process.env.BASE_PATH,
-  reactStrictMode: true,
-  images: {
-    domains: [],
-  },
-};
+  basePath: "/yujaPortfolio",
+  trailingSlash: true,
+}
 
 module.exports = nextConfig;
