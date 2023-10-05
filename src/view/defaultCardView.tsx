@@ -38,8 +38,6 @@ const DefaultCardView = observer(
       return () => window.removeEventListener("resize", update);
     });
 
-    console.log(props.model.sliderViewCount);
-
     const settings = {
       className: "card-slider",
       centerMode: false,
@@ -56,7 +54,6 @@ const DefaultCardView = observer(
       prevArrow: <CardPrevArrow addClassName="card-slide-arrow card-slide-prev" />,
     };
 
-    console.log(props.model.isDetailTowLine);
     return (
       <>
         <div ref={ref} className="card-container">
@@ -136,7 +133,7 @@ const DefaultCardView = observer(
                   style={{
                     width: `${props.model.percent}%`,
                     height: props.model.isDetailTowLine ? `${props.model.detailSize}px` : "100%",
-                    marginBottom: props.model.isDetailTowLine ? "10px" : 0,
+                    marginBottom: props.model.isDetailTowLine ? "10px !important" : 0,
                   }}
                 >
                   <div className="link">

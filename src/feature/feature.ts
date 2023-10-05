@@ -48,6 +48,7 @@ export class FeatureSectionModel {
   viewCount: number;
   midViewCount: number;
   mobileViewCount: number;
+  smallMobileViewCount: number;
   size: number;
   featureItems: FeatureItemModel[];
   currentItem?: number | null;
@@ -65,6 +66,7 @@ export class FeatureSectionModel {
     viewCount: number;
     midViewCount: number;
     mobileViewCount: number;
+    smallMobileViewCount: number;
     size: number;
     currentItem?: number | null;
   }) {
@@ -78,6 +80,7 @@ export class FeatureSectionModel {
     this.viewCount = props.viewCount;
     this.midViewCount = props.midViewCount;
     this.mobileViewCount = props.mobileViewCount;
+    this.smallMobileViewCount = props.smallMobileViewCount;
     this.size = props.size;
     this.currentItem = props.currentItem ?? null;
     makeAutoObservable(this);
@@ -92,6 +95,10 @@ export class FeatureSectionModel {
       return 100 / this.mobileViewCount;
     }
 
+    if (frontModel.isSmallMobile) {
+      return 100 / this.smallMobileViewCount;
+    }
+
     return 100 / this.viewCount;
   }
 
@@ -104,16 +111,21 @@ export class FeatureSectionModel {
       return this.mobileViewCount;
     }
 
+    if (frontModel.isSmallMobile) {
+      return this.smallMobileViewCount;
+    }
+
     return this.viewCount;
   }
 
   getDetailSize(id: string | null) {
+    // const padding =
+    //   frontModel.isMobile || frontModel.isSmallMobile ? (frontModel.isMobile ? 3 : 8) : 8;
+
     if (isEmpty(this.currentDetailList(id))) {
       runInAction(() => (this.isDetailTowLine = false));
       return this.detailSize;
     }
-
-    console.log(this.currentDetailList(id).length, "여기!!");
 
     if (this.sliderViewCount >= this.currentDetailList(id).length) {
       runInAction(() => (this.isDetailTowLine = false));
@@ -121,7 +133,12 @@ export class FeatureSectionModel {
     }
 
     runInAction(() => (this.isDetailTowLine = true));
-    return this.detailSize * 2 + 10;
+
+    if (this.currentDetailList(id).length > 4 && this.sliderViewCount === 2) {
+      return this.detailSize * 3 + 20;
+    }
+
+    return this.detailSize * 2 + 20;
   }
 
   currentDetailList(id: string | null) {

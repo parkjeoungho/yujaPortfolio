@@ -23,6 +23,12 @@ const MainPage = observer(() => {
     if (typeof window === "undefined") {
       return;
     }
+
+    if (!model.isInit) {
+      model.isInit = true;
+      return;
+    }
+
     const update = () => {
       if (isNil(selectRef) || isNil(selectRef.current)) {
         return;
@@ -35,7 +41,7 @@ const MainPage = observer(() => {
       const winY = window.scrollY;
       const winEndY = window.scrollY + window.innerHeight;
       const selectSectionY = selectRef.current.offsetTop + selectRef.current.scrollHeight;
-      const mainRefY = mainRef.current.offsetTop + mainRef.current.scrollHeight;
+      const mainRefY = mainRef.current.offsetTop + mainRef.current.scrollHeight / 1.15;
 
       if (!frontModel.isIntro) {
         if (winY >= mainRefY && model.mainModel.isInit) {
@@ -54,6 +60,13 @@ const MainPage = observer(() => {
 
       runInAction(() => (model.isShowTopButton = false));
     };
+
+    if (frontModel.isIntro && model.isInit && frontModel.isSmallMobile) {
+      runInAction(() => {
+        frontModel.isIntro = false;
+        model.mainModel.isInit = true;
+      });
+    }
 
     update();
 
@@ -79,7 +92,7 @@ const MainPage = observer(() => {
   return (
     <>
       {/* intro */}
-      {frontModel.isIntro && (
+      {frontModel.isIntro && !frontModel.isSmallMobile && (
         <IntroView
           model={model.introModel}
           onOff={action(() => {
@@ -131,7 +144,10 @@ const MainPage = observer(() => {
                       key={`naver-${index}`}
                       style={{
                         paddingTop:
-                          index === 1 && (frontModel.isMid || frontModel.isMobile) ? "70px" : 0,
+                          index === 1 &&
+                          (frontModel.isMid || frontModel.isMobile || frontModel.isSmallMobile)
+                            ? "70px"
+                            : 0,
                       }}
                     >
                       <SectionView
@@ -265,6 +281,7 @@ const MainPage = observer(() => {
 });
 
 class MainModel {
+  isInit = false;
   isShowTopButton = false;
   currentDetailSection: string | null = null;
   currentDetailItem: string | null = null;

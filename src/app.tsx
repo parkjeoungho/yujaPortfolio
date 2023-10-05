@@ -5,10 +5,14 @@ import { some } from "lodash";
 import { observer } from "mobx-react-lite";
 import LayoutView from "./view/layout";
 import AnimatedCursor from "react-animated-cursor";
+import Head from "next/head";
 
 export function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <title>Shin yujin PF</title>
+      </Head>
       <LayoutSelector>
         <Component {...pageProps} />
         <AnimatedCursor

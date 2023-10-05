@@ -41,7 +41,7 @@ const MainView = observer((props: { model: MainSectionModel }) => {
 
         <div className="info-text-box">
           <div>
-            <p>안녕하세요, 디자이너 신유진의 포트폴리오입니다.</p>
+            <p className="link">안녕하세요, 디자이너 신유진의 포트폴리오입니다.</p>
           </div>
           {/* <div>
             <p></p>
@@ -50,10 +50,10 @@ const MainView = observer((props: { model: MainSectionModel }) => {
       </div>
 
       <div className="scroll">
-        <div className="scroll-image">
+        <div className="scroll-image link">
           <img src="/assets/images/scroll.svg" alt="scroll" />
         </div>
-        <p>아래로 스크롤</p>
+        <p className="link">아래로 스크롤</p>
       </div>
     </div>
   );

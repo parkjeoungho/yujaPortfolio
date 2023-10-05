@@ -12,21 +12,33 @@ const LayoutView = observer((props: PropsWithChildren) => {
     const update = () => {
       const screenX = window.innerWidth;
 
+      frontModel.onVh(window.innerHeight);
+
       if (1280 >= screenX && screenX > 900 && !frontModel.isMid) {
         frontModel.onMid(true);
         frontModel.onMobile(false);
+        frontModel.onSmallMobile(false);
         return;
       }
 
-      if (900 >= screenX && !frontModel.isMobile) {
+      if (900 >= screenX && screenX > 430 && !frontModel.isMobile) {
         frontModel.onMid(false);
         frontModel.onMobile(true);
+        frontModel.onSmallMobile(false);
+        return;
+      }
+
+      if (430 >= screenX && !frontModel.isSmallMobile) {
+        frontModel.onMid(false);
+        frontModel.onMobile(false);
+        frontModel.onSmallMobile(true);
         return;
       }
 
       if (screenX > 1280) {
         frontModel.onMid(false);
         frontModel.onMobile(false);
+        frontModel.onSmallMobile(false);
         return;
       }
     };
@@ -43,7 +55,7 @@ const LayoutView = observer((props: PropsWithChildren) => {
     <div
       className="wrap"
       style={{
-        height: frontModel.isIntro ? "100vh" : "auto",
+        height: frontModel.isIntro ? frontModel.vh + "px" : "auto",
         overflow: frontModel.isIntro ? "hidden" : "visible",
       }}
     >

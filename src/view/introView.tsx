@@ -19,12 +19,12 @@ const IntroView = observer((props: { model: IntroModel; onOff: () => void }) => 
               props.model.isOut = true;
             });
           }, 1500);
-        }, 650);
+        }, 750);
       });
     }
 
     if (frontModel.isIntro) {
-      setTimeout(() => props.onOff(), 3700);
+      setTimeout(() => props.onOff(), 3400);
     }
   }, [props]);
 
@@ -38,6 +38,7 @@ const IntroView = observer((props: { model: IntroModel; onOff: () => void }) => 
           on: props.model.isLoading,
           out: props.model.isOut,
         })}
+        style={{ height: frontModel.vh + "px" }}
       >
         <div className="loading-text-box">
           <div className="bg-box">

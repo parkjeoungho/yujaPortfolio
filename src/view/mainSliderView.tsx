@@ -6,6 +6,7 @@ import Play from "../../public/assets/images/main/play.svg";
 import Pause from "../../public/assets/images/main/pause.svg";
 import classNames from "classnames";
 import { isNil } from "lodash";
+import { frontModel } from "../model/model";
 
 const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
   const ref = useRef<Slider>(null);
@@ -28,7 +29,7 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
 
   const settings = {
     className: "main-slider",
-    centerMode: true,
+    centerMode: !frontModel.isSmallMobile,
     centerPadding: "0px",
     infinite: true,
     slidesToShow: 1,
@@ -58,7 +59,7 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
 
   return (
     <div className="main-slider-container link">
-      <div className="slider-wrap ">
+      <div className="slider-wrap">
         <Slider ref={ref} {...settings}>
           {props.model.featureItems.map((feature, index) => (
             <div key={`main-slider-list-${index}`} className="slide-list">
@@ -74,7 +75,7 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
 
       <MainSliderNextArrow
         addClassName="main-slide-arrow main-slide-next link"
-        onCLick={() => {
+        onClick={() => {
           if (!ref || !ref.current) {
             return;
           }
@@ -84,7 +85,7 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
       />
       <MainSliderPrevArrow
         addClassName="main-slide-arrow main-slide-prev link"
-        onCLick={() => {
+        onClick={() => {
           if (!ref || !ref.current) {
             return;
           }
@@ -96,21 +97,17 @@ const MainSliderView = observer((props: { model: FeatureSectionModel }) => {
   );
 });
 
-// @ts-ignore
-export function MainSliderPrevArrow(props) {
-  const { onClick, addClassName } = props;
+export function MainSliderPrevArrow(props: { onClick: () => void; addClassName: string }) {
   return (
-    <div className={`${addClassName ?? ""}`} onClick={() => onClick()}>
+    <div className={`${props.addClassName ?? ""}`} onClick={() => props.onClick()}>
       <img src="/assets/images/main/main-prev.svg" alt="prev" />
     </div>
   );
 }
 
-// @ts-ignore
-export function MainSliderNextArrow(props) {
-  const { onClick, addClassName } = props;
+export function MainSliderNextArrow(props: { onClick: () => void; addClassName: string }) {
   return (
-    <div className={`${addClassName ?? ""}`} onClick={() => onClick()}>
+    <div className={`${props.addClassName ?? ""}`} onClick={() => props.onClick()}>
       <img src="/assets/images/main/main-next.svg" alt="next" />
     </div>
   );

@@ -21,6 +21,7 @@ export const featureNaver: FeatureModel = new FeatureModel({
       viewCount: 1,
       midViewCount: 1,
       mobileViewCount: 1,
+      smallMobileViewCount: 1,
       size: 383,
       featureItems: [
         new FeatureItemModel({
@@ -65,6 +66,7 @@ export const featureNaver: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 260,
       sectionTitle: "네이버스토어 농협식품 배너 모바일",
       contribution: "디자인 제작 기여도 100%",
@@ -126,6 +128,7 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 327,
       sectionTitle: "보건복지부 육아 인스타그램 카드뉴스",
       contribution: "디자인 제작 기여도 100%",
@@ -219,22 +222,11 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 327,
       sectionTitle: "다양한 광고 디자인",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
-        new FeatureItemModel({
-          featureId: "advertisement-coupon",
-          featureImage: "/assets/images/section_05/h/coupon.png",
-        }),
-        new FeatureItemModel({
-          featureId: "advertisement-foodweek",
-          featureImage: "/assets/images/section_05/h/foodweek.png",
-        }),
-        new FeatureItemModel({
-          featureId: "advertisement-happynewyear",
-          featureImage: "/assets/images/section_05/h/happynewyear.png",
-        }),
         new FeatureItemModel({
           featureId: "advertisement-konjac",
           featureImage: "/assets/images/section_05/h/konjac_01.png",
@@ -259,6 +251,18 @@ export const featureInstagram: FeatureModel = new FeatureModel({
             "/assets/images/section_05/h/Samgyetang_03.png",
           ],
         }),
+        new FeatureItemModel({
+          featureId: "advertisement-foodweek",
+          featureImage: "/assets/images/section_05/h/foodweek.png",
+        }),
+        new FeatureItemModel({
+          featureId: "advertisement-coupon",
+          featureImage: "/assets/images/section_05/h/coupon.png",
+        }),
+        new FeatureItemModel({
+          featureId: "advertisement-happynewyear",
+          featureImage: "/assets/images/section_05/h/happynewyear.png",
+        }),
       ],
     }),
     new FeatureSectionModel({
@@ -268,6 +272,7 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 327,
       sectionTitle: "일룸 PET의 펫 관점형 리뷰 프로젝트",
       contribution: "디자인 제작 기여도 100%",
@@ -315,6 +320,7 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 327,
       sectionTitle: "친환경 브랜드의 청량함이 느껴지는 콘텐츠",
       contribution: "디자인 제작 기여도 100%",
@@ -364,6 +370,7 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 327,
       sectionTitle: "건강기능식품 광고 이미지",
       contribution: "디자인 제작 기여도 100%",
@@ -401,6 +408,7 @@ export const featureInstagram: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 327,
       sectionTitle: "당장 깨물어 먹고 싶은 귀여운 과일 프로젝트",
       contribution: "디자인 제작 기여도 100%",
@@ -442,6 +450,7 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 555,
       sectionTitle: "국민 면요리 면사랑 쇼핑라이브 송출배너",
       contribution: "디자인 제작 기여도 100%",
@@ -473,14 +482,7 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
             "/assets/images/section_09/03/h/rainy_04.png",
           ],
         }),
-        new FeatureItemModel({
-          featureId: "live-quiz",
-          featureImage: "/assets/images/section_09/04/h/quiz_01.png",
-          featureDetailImages: [
-            "/assets/images/section_09/04/h/quiz_02.png",
-            "/assets/images/section_09/04/h/quiz_03.png",
-          ],
-        }),
+
         new FeatureItemModel({
           featureId: "live-px",
           featureImage: "/assets/images/section_09/05/h/px_01.png",
@@ -488,6 +490,14 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
             "/assets/images/section_09/05/h/px_02.png",
             "/assets/images/section_09/05/h/px_03.png",
             "/assets/images/section_09/05/h/px_04.png",
+          ],
+        }),
+        new FeatureItemModel({
+          featureId: "live-quiz",
+          featureImage: "/assets/images/section_09/04/h/quiz_01.png",
+          featureDetailImages: [
+            "/assets/images/section_09/04/h/quiz_02.png",
+            "/assets/images/section_09/04/h/quiz_03.png",
           ],
         }),
       ],
@@ -507,17 +517,14 @@ export const featureEtc: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 610,
       sectionTitle: "다양한 광고 포스터",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
         new FeatureItemModel({
-          featureId: "etc-golden",
-          featureImage: "/assets/images/section_10/h/golden.png",
-        }),
-        new FeatureItemModel({
-          featureId: "etc-live",
-          featureImage: "/assets/images/section_10/h/live.png",
+          featureId: "etc-supporters",
+          featureImage: "/assets/images/section_10/h/supporters.png",
         }),
         new FeatureItemModel({
           featureId: "etc-money",
@@ -528,12 +535,16 @@ export const featureEtc: FeatureModel = new FeatureModel({
           featureImage: "/assets/images/section_10/h/online.png",
         }),
         new FeatureItemModel({
+          featureId: "etc-golden",
+          featureImage: "/assets/images/section_10/h/golden.png",
+        }),
+        new FeatureItemModel({
           featureId: "etc-Sight",
           featureImage: "/assets/images/section_10/h/Sight.png",
         }),
         new FeatureItemModel({
-          featureId: "etc-supporters",
-          featureImage: "/assets/images/section_10/h/supporters.png",
+          featureId: "etc-live",
+          featureImage: "/assets/images/section_10/h/live.png",
         }),
       ],
     }),
@@ -544,10 +555,27 @@ export const featureEtc: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 610,
       sectionTitle: "글로벌 수입수철 뉴스를 포스터로",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
+        new FeatureItemModel({
+          featureId: "news-map",
+          featureImage: "/assets/images/section_11/h/map.png",
+        }),
+        new FeatureItemModel({
+          featureId: "news-lalaland",
+          featureImage: "/assets/images/section_11/h/lalaland.png",
+        }),
+        new FeatureItemModel({
+          featureId: "news-organic",
+          featureImage: "/assets/images/section_11/h/organic.png",
+        }),
+        new FeatureItemModel({
+          featureId: "news-foodpoisoning",
+          featureImage: "/assets/images/section_11/h/foodpoisoning.png",
+        }),
         new FeatureItemModel({
           featureId: "news-airplane",
           featureImage: "/assets/images/section_11/h/airplane.png",
@@ -555,22 +583,6 @@ export const featureEtc: FeatureModel = new FeatureModel({
         new FeatureItemModel({
           featureId: "news-application",
           featureImage: "/assets/images/section_11/h/application.png",
-        }),
-        new FeatureItemModel({
-          featureId: "news-foodpoisoning",
-          featureImage: "/assets/images/section_11/h/foodpoisoning.png",
-        }),
-        new FeatureItemModel({
-          featureId: "news-lalaland",
-          featureImage: "/assets/images/section_11/h/lalaland.png",
-        }),
-        new FeatureItemModel({
-          featureId: "news-map",
-          featureImage: "/assets/images/section_11/h/map.png",
-        }),
-        new FeatureItemModel({
-          featureId: "news-organic",
-          featureImage: "/assets/images/section_11/h/organic.png",
         }),
       ],
     }),
@@ -581,10 +593,19 @@ export const featureEtc: FeatureModel = new FeatureModel({
       viewCount: 5,
       midViewCount: 4,
       mobileViewCount: 3,
+      smallMobileViewCount: 2,
       size: 610,
       sectionTitle: "여름특집 광고 포스터",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
+        new FeatureItemModel({
+          featureId: "summer-summer",
+          featureImage: "/assets/images/section_12/h/summer.png",
+        }),
+        new FeatureItemModel({
+          featureId: "summer-swimming",
+          featureImage: "/assets/images/section_12/h/swimming.png",
+        }),
         new FeatureItemModel({
           featureId: "summer-11stsummer",
           featureImage: "/assets/images/section_12/h/11stsummer.png",
@@ -596,14 +617,6 @@ export const featureEtc: FeatureModel = new FeatureModel({
         new FeatureItemModel({
           featureId: "summer-ocean",
           featureImage: "/assets/images/section_12/h/ocean.png",
-        }),
-        new FeatureItemModel({
-          featureId: "summer-summer",
-          featureImage: "/assets/images/section_12/h/summer.png",
-        }),
-        new FeatureItemModel({
-          featureId: "summer-swimming",
-          featureImage: "/assets/images/section_12/h/swimming.png",
         }),
       ],
     }),
