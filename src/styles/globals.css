@@ -141,6 +141,13 @@ table {
   border-spacing: 0;
 }
 
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+
 body,
 .wrap {
   background: #282828;
@@ -183,7 +190,7 @@ body,
 
 .container .main .scroll {
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   left: calc(50%);
   transform: translateX(-50%);
   display: flex;
@@ -257,6 +264,7 @@ body,
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  min-height: min(8.33vw, 160px);
   height: min(8.33vw, 160px);
   transform-origin: left center;
   transform: rotate(5deg);
@@ -264,10 +272,12 @@ body,
 }
 
 .container .main .inner-content .mid {
+  min-height: min(9.38vw, 180px);
   height: min(9.38vw, 180px);
 }
 
 .container .main .inner-content .bottom {
+  min-height: min(9.38vw, 180px);
   height: min(9.38vw, 180px);
   padding-left: 5px;
   margin-bottom: 60px;
@@ -276,6 +286,7 @@ body,
 .container .main .inner-content .info-text-box div {
   position: relative;
   overflow: hidden;
+  min-height: min(1.88vw, 36px);
   height: min(1.88vw, 36px);
   margin-bottom: 5px;
 }
@@ -867,7 +878,7 @@ body,
   margin-bottom: 15px;
 }
 
-.footer .footer-content p:first-child b {
+.footer .footer-content p b {
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
 }
@@ -878,7 +889,7 @@ body,
 
 .top-btn {
   position: fixed;
-  top: 80vh;
+  bottom: 50px;
   right: 80px;
   width: 80px;
   height: 60px;
@@ -1079,12 +1090,12 @@ body,
 
 .intro-container.on.out .loading-num-box .num-box.first {
   transition: 0.2s 0.15s all;
-  transform: translateY(calc(-100% + 19vw)) rotateY(90deg);
+  transform: translateY(calc(-100% + 18vw)) rotateY(90deg);
 }
 
 .intro-container.on.out .loading-num-box .num-box.second {
   transition: 0.2s 0.1s all;
-  transform: translateY(calc(-100% + 19vw)) rotateY(90deg);
+  transform: translateY(calc(-100% + 18vw)) rotateY(90deg);
 }
 
 .intro-container.on.out .loading-num-box p.last {
@@ -1138,7 +1149,7 @@ body,
 /*.intro-container.on*/
 .intro-container.on .loading-num-box .num-box.first {
   transition: 1.2s 0.2s ease-in-out;
-  transform: translateY(calc(-100% + 19vw)) rotateY(0deg);
+  transform: translateY(calc(-100% + 18vw)) rotateY(0deg);
 }
 
 .intro-container .loading-num-box .num-box.second {
@@ -1155,7 +1166,7 @@ body,
 /*.intro-container.on*/
 .intro-container.on .loading-num-box .num-box.second {
   transition: 1.2s ease-in-out;
-  transform: translateY(calc(-100% + 19vw)) rotateY(0deg);
+  transform: translateY(calc(-100% + 18vw)) rotateY(0deg);
 }
 
 .intro-container .loading-num-box p {
@@ -1190,6 +1201,109 @@ body,
 .intro-container.in .loading-num-box p.last {
   transition: 0.2s 0.55s all;
   transform: rotateY(0deg);
+}
+
+.contact-btn {
+  position: fixed;
+  bottom: 50px;
+  left: 80px;
+  border: none;
+  background-color: #fff;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 10;
+  transition: 0.2s all ease-in-out;
+  opacity: 0;
+}
+
+.contact-btn.on {
+  opacity: 1;
+}
+
+.contact-btn p {
+  padding-bottom: 2px;
+  font-size: 15px;
+  line-height: 38px;
+  font-weight: 400;
+  font-family: "Noto Sans KR", sans-serif;
+  margin-right: 10px;
+}
+
+.contact-btn div {
+  width: 20px;
+  height: 20px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  display: none;
+  opacity: 0;
+  transition: 0.2s 0.3s all;
+}
+
+.modal.block {
+  display: block;
+}
+
+.modal.is-open {
+  opacity: 1;
+}
+
+.modal .black {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-content {
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: min(23.44vw, 450px);
+  height: min(23.44vw, 450px);
+}
+
+.modal .modal-content .contact-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: 0.3s all;
+}
+
+.modal.is-open .modal-content .contact-image {
+  transition: 0.3s 0.3s all;
+  transform: translateY(0%);
+}
+
+.modal .modal-content .contact-image button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 35px;
+  height: 35px;
+  border: none;
+}
+
+.modal .modal-content .contact-image button img {
+  width: 100%;
+}
+
+.modal .modal-content .contact-image img {
+  width: 100%;
 }
 
 /* 1500 */
@@ -1525,6 +1639,39 @@ body,
     width: 70px;
     height: 70px;
   }
+
+  .contact-btn {
+    bottom: 50px;
+    left: 80px;
+    padding: 0 25px;
+    border-radius: 5px;
+  }
+
+  .contact-btn p {
+    padding-bottom: 2px;
+    font-size: 15px;
+    line-height: 38px;
+    margin-right: 10px;
+  }
+
+  .contact-btn div {
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal .modal-content {
+    top: 50px;
+    right: 50px;
+    width: min(27.34vw, 350px);
+    height: min(27.34vw, 350px);
+  }
+
+  .modal .modal-content .contact-image button {
+    right: 20px;
+    top: 20px;
+    width: 35px;
+    height: 35px;
+  }
 }
 
 /* 900 */
@@ -1745,10 +1892,43 @@ body,
   }
 
   .top-btn {
-    top: 85vh;
+    bottom: 50px;
     right: 10px;
     width: 60px;
     height: 60px;
+  }
+
+  .contact-btn {
+    bottom: 50px;
+    left: 30px;
+    padding: 0 15px;
+    border-radius: 5px;
+  }
+
+  .contact-btn p {
+    padding-bottom: 2px;
+    font-size: 14px;
+    line-height: 32px;
+    margin-right: 5px;
+  }
+
+  .contact-btn div {
+    width: 15px;
+    height: 15px;
+  }
+
+  .modal .modal-content {
+    top: 30px;
+    right: 30px;
+    width: min(38.89vw, 350px);
+    height: min(38.89vw, 350px);
+  }
+
+  .modal .modal-content .contact-image button {
+    right: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -1986,10 +2166,45 @@ body,
   }
 
   .top-btn {
-    top: 85vh;
+    bottom: 50px;
     right: 10px;
     width: 60px;
     height: 60px;
+  }
+
+  .contact-btn {
+    bottom: 50px;
+    left: 30px;
+    padding: 0 15px;
+    border-radius: 5px;
+  }
+
+  .contact-btn p {
+    padding-bottom: 2px;
+    font-size: 13px;
+    line-height: 32px;
+    margin-right: 5px;
+  }
+
+  .contact-btn div {
+    width: 15px;
+    height: 15px;
+  }
+
+  .modal .modal-content {
+    top: 30px;
+    right: 30px;
+    width: min(50.72vw, 350px);
+    height: min(50.72vw, 350px);
+  }
+
+  .modal .modal-content .contact-image button {
+    right: 10px;
+    top: 10px;
+    padding: 7px;
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
   }
 }
 
@@ -2239,9 +2454,45 @@ body,
   }
 
   .top-btn {
-    top: 85vh;
+    bottom: 50px;
     right: 10px;
     width: 60px;
     height: 60px;
+  }
+
+  .contact-btn {
+    bottom: 50px;
+    left: 30px;
+    padding: 0 15px;
+    border-radius: 5px;
+  }
+
+  .contact-btn p {
+    padding-bottom: 2px;
+    font-size: 13px;
+    line-height: 32px;
+    margin-right: 5px;
+  }
+
+  .contact-btn div {
+    width: 15px;
+    height: 15px;
+  }
+
+  .modal .modal-content {
+    top: 100px;
+    right: 50%;
+    transform: translateX(50%);
+    width: min(72.09vw, 310px);
+    height: min(72.09vw, 310px);
+  }
+
+  .modal .modal-content .contact-image button {
+    right: 10px;
+    top: 10px;
+    padding: 7px;
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
   }
 }

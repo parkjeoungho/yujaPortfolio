@@ -24,7 +24,7 @@ const MainView = observer((props: { model: MainSectionModel }) => {
       >
         <div className="top">
           <div className="inner">
-            <span className="link">Hello, I Am</span>
+            <span className="link">Hello, I am</span>
           </div>
         </div>
 

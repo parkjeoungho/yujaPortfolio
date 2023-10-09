@@ -1,5 +1,3 @@
-class Config {
-  prefix = "https://parkjeoungho.github.io/yujaPortfolio/";
-}
+class Config {}
 
 export const config = new Config();

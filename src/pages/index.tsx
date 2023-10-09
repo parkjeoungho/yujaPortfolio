@@ -13,6 +13,7 @@ import classNames from "classnames";
 import IntroView, { IntroModel } from "../view/introView";
 import MainView, { MainSectionModel } from "../view/mainView";
 import { frontModel } from "../model/model";
+import ModalView from "../view/modalView";
 
 const MainPage = observer(() => {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -21,11 +22,6 @@ const MainPage = observer(() => {
 
   useEffect(() => {
     if (typeof window === "undefined") {
-      return;
-    }
-
-    if (!model.isInit) {
-      model.isInit = true;
       return;
     }
 
@@ -61,13 +57,6 @@ const MainPage = observer(() => {
       runInAction(() => (model.isShowTopButton = false));
     };
 
-    if (frontModel.isIntro && model.isInit && frontModel.isSmallMobile) {
-      runInAction(() => {
-        frontModel.isIntro = false;
-        model.mainModel.isInit = true;
-      });
-    }
-
     update();
 
     window.addEventListener("scroll", update);
@@ -88,6 +77,8 @@ const MainPage = observer(() => {
     [Feature.shoppingLive]: useMoveSection(),
     [Feature.etc]: useMoveSection(),
   };
+
+  model.init();
 
   return (
     <>
@@ -245,11 +236,10 @@ const MainPage = observer(() => {
         </div>
         <div className="footer-content">
           <p className="link">
-            안녕하세요. <b>디자이너 신유진</b>입니다.
+            안녕하세요. 원만한 소통&공감 능력을 갖춘 <br />
+            섬세한 <b>디자이너 신유진</b>입니다.
           </p>
           <p className="link">
-            원만한 소통&공감 능력을 갖춘 섬세한 디자이너 신유진입니다.
-            <br />
             SNS 콘텐츠, 이벤트 프로모션, 상세 페이지 디자인 등을
             <br />
             전문으로 하는 그래픽 디자이너 신유진입니다.
@@ -276,6 +266,19 @@ const MainPage = observer(() => {
       >
         <img src={`${prefix}/assets/images/top_arrow.png`} alt="top-btn" />
       </button>
+
+      <button
+        type="button"
+        className={classNames("contact-btn", { on: model.isShowTopButton })}
+        onClick={action(() => (model.isModalShow = true))}
+      >
+        <p>Contact</p>
+        <div className="arrow-image">
+          <img src={`${prefix}/assets/images/arrow.svg`} alt="arrow" />
+        </div>
+      </button>
+
+      <ModalView isShow={model.isModalShow} onOff={action(() => (model.isModalShow = false))} />
     </>
   );
 });
@@ -286,11 +289,21 @@ class MainModel {
   currentDetailSection: string | null = null;
   currentDetailItem: string | null = null;
   isIntro = true;
+  isModalShow = false;
   introModel: IntroModel = new IntroModel();
   mainModel: MainSectionModel = new MainSectionModel();
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  init() {
+    if (frontModel.isIntro && frontModel.isSmallMobile) {
+      runInAction(() => {
+        frontModel.isIntro = false;
+        this.mainModel.isInit = true;
+      });
+    }
   }
 
   setCurrentDetailSection(detail: string | null, id: string | null) {

@@ -268,54 +268,6 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     }),
     new FeatureSectionModel({
       isSlide: true,
-      isHasDetail: true,
-      sectionId: "instagram-pet",
-      viewCount: 5,
-      midViewCount: 4,
-      mobileViewCount: 3,
-      smallMobileViewCount: 2,
-      size: 327,
-      sectionTitle: "일룸 PET의 펫 관점형 리뷰 프로젝트",
-      contribution: "디자인 제작 기여도 100%",
-      featureItems: [
-        new FeatureItemModel({
-          featureId: "iloom-appointment",
-          featureImage: `${prefix}/assets/images/section_04/h/appointment_01.png`,
-          featureDetailImages: [`${prefix}/assets/images/section_04/h/appointment_02.png`],
-        }),
-        new FeatureItemModel({
-          featureId: "iloom-honey",
-          featureImage: `${prefix}/assets/images/section_04/h/honey_01.png`,
-          featureDetailImages: [
-            `${prefix}/assets/images/section_04/h/honey_02.png`,
-            `${prefix}/assets/images/section_04/h/honey_03.png`,
-          ],
-        }),
-        new FeatureItemModel({
-          featureId: "iloom-keyword",
-          featureImage: `${prefix}/assets/images/section_04/h/keyword_01.png`,
-          featureDetailImages: [`${prefix}/assets/images/section_04/h/keyword_02.png`],
-        }),
-        new FeatureItemModel({
-          featureId: "iloom-secret",
-          featureImage: `${prefix}/assets/images/section_04/h/secret_01.png`,
-          featureDetailImages: [`${prefix}/assets/images/section_04/h/secret_02.png`],
-        }),
-        new FeatureItemModel({
-          featureId: "iloom-test",
-          featureImage: `${prefix}/assets/images/section_04/h/test_01.png`,
-          featureDetailImages: [
-            `${prefix}/assets/images/section_04/h/test_02.png`,
-            `${prefix}/assets/images/section_04/h/test_03.png`,
-            `${prefix}/assets/images/section_04/h/test_04.png`,
-            `${prefix}/assets/images/section_04/h/test_05.png`,
-            `${prefix}/assets/images/section_04/h/test_06.png`,
-          ],
-        }),
-      ],
-    }),
-    new FeatureSectionModel({
-      isSlide: true,
       isHasDetail: false,
       sectionId: "instagram-Eco",
       viewCount: 5,
@@ -404,6 +356,54 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     }),
     new FeatureSectionModel({
       isSlide: true,
+      isHasDetail: true,
+      sectionId: "instagram-pet",
+      viewCount: 5,
+      midViewCount: 4,
+      mobileViewCount: 3,
+      smallMobileViewCount: 2,
+      size: 327,
+      sectionTitle: "일룸 PET의 펫 관점형 리뷰 프로젝트",
+      contribution: "디자인 제작 기여도 100%",
+      featureItems: [
+        new FeatureItemModel({
+          featureId: "iloom-appointment",
+          featureImage: `${prefix}/assets/images/section_04/h/appointment_01.png`,
+          featureDetailImages: [`${prefix}/assets/images/section_04/h/appointment_02.png`],
+        }),
+        new FeatureItemModel({
+          featureId: "iloom-honey",
+          featureImage: `${prefix}/assets/images/section_04/h/honey_01.png`,
+          featureDetailImages: [
+            `${prefix}/assets/images/section_04/h/honey_02.png`,
+            `${prefix}/assets/images/section_04/h/honey_03.png`,
+          ],
+        }),
+        new FeatureItemModel({
+          featureId: "iloom-keyword",
+          featureImage: `${prefix}/assets/images/section_04/h/keyword_01.png`,
+          featureDetailImages: [`${prefix}/assets/images/section_04/h/keyword_02.png`],
+        }),
+        new FeatureItemModel({
+          featureId: "iloom-secret",
+          featureImage: `${prefix}/assets/images/section_04/h/secret_01.png`,
+          featureDetailImages: [`${prefix}/assets/images/section_04/h/secret_02.png`],
+        }),
+        new FeatureItemModel({
+          featureId: "iloom-test",
+          featureImage: `${prefix}/assets/images/section_04/h/test_01.png`,
+          featureDetailImages: [
+            `${prefix}/assets/images/section_04/h/test_02.png`,
+            `${prefix}/assets/images/section_04/h/test_03.png`,
+            `${prefix}/assets/images/section_04/h/test_04.png`,
+            `${prefix}/assets/images/section_04/h/test_05.png`,
+            `${prefix}/assets/images/section_04/h/test_06.png`,
+          ],
+        }),
+      ],
+    }),
+    new FeatureSectionModel({
+      isSlide: true,
       isHasDetail: false,
       sectionId: "instagram-fruit",
       viewCount: 5,
@@ -460,37 +460,36 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
           featureId: "live-sandybeach",
           featureImage: `${prefix}/assets/images/section_09/01/h/sandybeach_01.png`,
           featureDetailImages: [
-            `/${prefix}/assets/images/section_09/01/h/sandybeach_02.png`,
-            `/${prefix}/assets/images/section_09/01/h/sandybeach_03.png`,
-            `/${prefix}/assets/images/section_09/01/h/sandybeach_04.png`,
-            `/${prefix}/assets/images/section_09/01/h/sandybeach_05.png`,
+            `${prefix}/assets/images/section_09/01/h/sandybeach_02.png`,
+            `${prefix}/assets/images/section_09/01/h/sandybeach_03.png`,
+            `${prefix}/assets/images/section_09/01/h/sandybeach_04.png`,
+            `${prefix}/assets/images/section_09/01/h/sandybeach_05.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "live-brick",
           featureImage: `${prefix}/assets/images/section_09/02/h/brick_01.png`,
           featureDetailImages: [
-            `/${prefix}/assets/images/section_09/02/h/brick_02.png`,
-            `/${prefix}/assets/images/section_09/02/h/brick_03.png`,
+            `${prefix}/assets/images/section_09/02/h/brick_02.png`,
+            `${prefix}/assets/images/section_09/02/h/brick_03.png`,
           ],
         }),
         new FeatureItemModel({
           featureId: "live-rainy",
           featureImage: `${prefix}/assets/images/section_09/03/h/rainy_01.png`,
           featureDetailImages: [
-            `/${prefix}/assets/images/section_09/03/h/rainy_02.png`,
-            `/${prefix}/assets/images/section_09/03/h/rainy_03.png`,
-            `/${prefix}/assets/images/section_09/03/h/rainy_04.png`,
+            `${prefix}/assets/images/section_09/03/h/rainy_02.png`,
+            `${prefix}/assets/images/section_09/03/h/rainy_03.png`,
+            `${prefix}/assets/images/section_09/03/h/rainy_04.png`,
           ],
         }),
-
         new FeatureItemModel({
           featureId: "live-px",
           featureImage: `${prefix}/assets/images/section_09/05/h/px_01.png`,
           featureDetailImages: [
-            `/${prefix}/assets/images/section_09/05/h/px_02.png`,
-            `/${prefix}/assets/images/section_09/05/h/px_03.png`,
-            `/${prefix}/assets/images/section_09/05/h/px_04.png`,
+            `${prefix}/assets/images/section_09/05/h/px_02.png`,
+            `${prefix}/assets/images/section_09/05/h/px_03.png`,
+            `${prefix}/assets/images/section_09/05/h/px_04.png`,
           ],
         }),
         new FeatureItemModel({
