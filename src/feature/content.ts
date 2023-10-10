@@ -356,6 +356,40 @@ export const featureInstagram: FeatureModel = new FeatureModel({
     }),
     new FeatureSectionModel({
       isSlide: true,
+      isHasDetail: false,
+      sectionId: "instagram-fruit",
+      viewCount: 5,
+      midViewCount: 4,
+      mobileViewCount: 3,
+      smallMobileViewCount: 2,
+      size: 327,
+      sectionTitle: "당장 깨물어 먹고 싶은 귀여운 과일 프로젝트",
+      contribution: "디자인 제작 기여도 100%",
+      featureItems: [
+        new FeatureItemModel({
+          featureId: "fruit-dif",
+          featureImage: `${prefix}/assets/images/section_08/h/dif.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "fruit-cherry",
+          featureImage: `${prefix}/assets/images/section_08/h/cherry.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "fruit-peach",
+          featureImage: `${prefix}/assets/images/section_08/h/peach.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "fruit-persimmon",
+          featureImage: `${prefix}/assets/images/section_08/h/persimmon.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "fruit-watermelon",
+          featureImage: `${prefix}/assets/images/section_08/h/watermelon.png`,
+        }),
+      ],
+    }),
+    new FeatureSectionModel({
+      isSlide: true,
       isHasDetail: true,
       sectionId: "instagram-pet",
       viewCount: 5,
@@ -399,40 +433,6 @@ export const featureInstagram: FeatureModel = new FeatureModel({
             `${prefix}/assets/images/section_04/h/test_05.png`,
             `${prefix}/assets/images/section_04/h/test_06.png`,
           ],
-        }),
-      ],
-    }),
-    new FeatureSectionModel({
-      isSlide: true,
-      isHasDetail: false,
-      sectionId: "instagram-fruit",
-      viewCount: 5,
-      midViewCount: 4,
-      mobileViewCount: 3,
-      smallMobileViewCount: 2,
-      size: 327,
-      sectionTitle: "당장 깨물어 먹고 싶은 귀여운 과일 프로젝트",
-      contribution: "디자인 제작 기여도 100%",
-      featureItems: [
-        new FeatureItemModel({
-          featureId: "fruit-dif",
-          featureImage: `${prefix}/assets/images/section_08/h/dif.png`,
-        }),
-        new FeatureItemModel({
-          featureId: "fruit-cherry",
-          featureImage: `${prefix}/assets/images/section_08/h/cherry.png`,
-        }),
-        new FeatureItemModel({
-          featureId: "fruit-peach",
-          featureImage: `${prefix}/assets/images/section_08/h/peach.png`,
-        }),
-        new FeatureItemModel({
-          featureId: "fruit-persimmon",
-          featureImage: `${prefix}/assets/images/section_08/h/persimmon.png`,
-        }),
-        new FeatureItemModel({
-          featureId: "fruit-watermelon",
-          featureImage: `${prefix}/assets/images/section_08/h/watermelon.png`,
         }),
       ],
     }),
@@ -557,7 +557,7 @@ export const featureEtc: FeatureModel = new FeatureModel({
       mobileViewCount: 3,
       smallMobileViewCount: 2,
       size: 610,
-      sectionTitle: "글로벌 수입수철 뉴스를 포스터로",
+      sectionTitle: "글로벌 수입수출 뉴스를 포스터로",
       contribution: "디자인 제작 기여도 100%",
       featureItems: [
         new FeatureItemModel({
