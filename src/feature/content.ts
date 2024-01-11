@@ -6,7 +6,9 @@ import {
   FeatureSectionModel,
 } from "./feature";
 
-export const prefix = "https://parkjeoungho.github.io/yujaPortfolio/";
+// TODO :: 주석해제
+export const prefix = "https://parkjeoungho.github.io/yujaPortfolio";
+// export const prefix = "";
 
 export const featureNaver: FeatureModel = new FeatureModel({
   featureType: Feature.naver,
@@ -122,6 +124,62 @@ export const featureInstagram: FeatureModel = new FeatureModel({
   featureName: "인스타그램",
   featureIcon: `${prefix}/assets/images/index_icon/instagram.png`,
   items: [
+    new FeatureSectionModel({
+      isSlide: true,
+      isHasDetail: false,
+      isTwoLine: false,
+      sectionId: "instagram-miridi",
+      viewCount: 5,
+      midViewCount: 4,
+      mobileViewCount: 3,
+      smallMobileViewCount: 2,
+      size: 260,
+      sectionTitle: "다양한 템플릿, 미리캔버스로 완성!",
+      contribution: "미리 에디터 디자인 기여도 100%",
+      featureItems: [
+        new FeatureItemModel({
+          featureId: "instagram-insurance",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/01_insurance.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-children",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/children.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-Image_consulting",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/Image_consulting.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-cat",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/cat.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-newyear",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/newyear.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-dementia",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/dementia.png`,
+        }),
+
+        new FeatureItemModel({
+          featureId: "instagram-graduation_cap",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/graduation_cap.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-partyroom",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/partyroom.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-Presentation",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/Presentation.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "instagram-volunteer",
+          featureImage: `${prefix}/assets/images/miridi_instar_sect/volunteer.png`,
+        }),
+      ],
+    }),
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: true,
@@ -444,6 +502,40 @@ export const featureShoppingLive: FeatureModel = new FeatureModel({
   featureName: "쇼핑 라이브",
   featureIcon: `${prefix}/assets/images/index_icon/live.png`,
   items: [
+    new FeatureSectionModel({
+      isSlide: true,
+      isHasDetail: false,
+      sectionId: "miridi-web",
+      viewCount: 5,
+      midViewCount: 4,
+      mobileViewCount: 3,
+      smallMobileViewCount: 2,
+      size: 555,
+      sectionTitle: "다양한 템플릿 미리캔버스로 완성!",
+      contribution: "미리 에디터 디자인 기여도 100%",
+      featureItems: [
+        new FeatureItemModel({
+          featureId: "miridi-Cheongyong",
+          featureImage: `${prefix}/assets/images/miridi_web_sect/Cheongyong.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "miridi-hanpa",
+          featureImage: `${prefix}/assets/images/miridi_web_sect/hanpa.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "miridi-tradition",
+          featureImage: `${prefix}/assets/images/miridi_web_sect/tradition.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "miridi-tree",
+          featureImage: `${prefix}/assets/images/miridi_web_sect/tree.png`,
+        }),
+        new FeatureItemModel({
+          featureId: "miridi-youthSquare",
+          featureImage: `${prefix}/assets/images/miridi_web_sect/youthSquare.png`,
+        }),
+      ],
+    }),
     new FeatureSectionModel({
       isSlide: true,
       isHasDetail: true,
